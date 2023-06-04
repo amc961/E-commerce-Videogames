@@ -8,9 +8,16 @@
     width: 100%;
     height: auto;
   }
-  .BlackBackground {
-    background-color: rgba(81, 81, 81, 0.59);
+.BlackBackground {
+    background-color: rgb(0, 0, 0);
     background-size: cover;
     opacity: 1;
 
   }
+.navbar {
+  position: sticky;
+}
+
+.blancotxt {
+  color: white;
+}
