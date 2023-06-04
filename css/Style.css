@@ -1,0 +1,16 @@
+.contenedor-fondo {
+    background-image: url('/Images/ResidenEvil4.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    opacity: 0.15;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+  }
+  .BlackBackground {
+    background-color: rgba(81, 81, 81, 0.59);
+    background-size: cover;
+    opacity: 1;
+
+  }
