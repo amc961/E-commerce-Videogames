@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .contenedor-fondo {
     background-image: url('/Images/ResidenEvil4.jpg');
     background-size: cover;
@@ -20,4 +26,21 @@
 
 .blancotxt {
   color: white;
+}
+
+
+/* Form styles */
+
+@media screen and (min-width: 900px){
+  .form-container{
+    width: 30%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 899px){
+  .form-container{
+    width: 60%;
+    margin: auto;
+  }
 }
