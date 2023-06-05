@@ -1,23 +1,52 @@
 .contenedor-fondo {
-    background-image: url('/Images/ResidenEvil4.jpg');
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    opacity: 0.15;
-    z-index: -1;
-    width: 100%;
-    height: auto;
-  }
-.BlackBackground {
-    background-color: rgb(0, 0, 0);
-    background-size: cover;
-    opacity: 1;
+  background-image: url('/Images/ResidenEvil4.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  opacity: 0.15;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
 
-  }
+.BlackBackground {
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+  opacity: 1;
+
+}
+
 .navbar {
   position: sticky;
 }
 
 .blancotxt {
   color: white;
+}
+
+/* Admin panel styles */
+
+.menu-container{
+  width: 30%;
+}
+
+.content-container{
+  width: 70%;
+}
+
+.menu-div {
+  background-color: #102e42;
+  height: 100vh;
+  font-size: 20px;
+}
+
+.menu-div a {
+  width: 100%;
+  text-decoration: none;
+  color: #098ca8;
+  margin-top: 30px;
+}
+
+.menu-div a:hover {
+  background-color: #0ffff8;
 }
