@@ -21,3 +21,66 @@
 .blancotxt {
   color: white;
 }
+
+
+
+
+
+
+.container-user{
+  width: 100%;
+  display: flex;
+}
+
+.menu-container{
+  width: 15%;
+}
+
+.content-container{
+  width: 85%;
+}
+
+.menu-div {
+  background-color: #102e42;
+  height: 100vh;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-div a {
+  width: 100%;
+  text-decoration: none;
+  color: #098ca8;
+  margin-top: 30px;
+}
+
+.menu-div a:hover {
+  background-color: #0ffff8;
+}
+
+@media screen and (max-width: 700px){
+  .container-admin{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-container{
+    width: 100%;
+  }
+
+  .content-container{
+    width: 100%;
+  }
+
+  .menu-div{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+  }
+
+  .menu-div a{
+    margin: auto;
+    width: auto;
+  }
