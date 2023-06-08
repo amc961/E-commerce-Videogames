@@ -1,25 +1,27 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 .contenedor-fondo {
-    background-image: url('/Images/ResidenEvil4.jpg');
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    opacity: 0.15;
-    z-index: -1;
-    width: 100%;
-    height: auto;
-  }
-.BlackBackground {
-    background-color: rgb(0, 0, 0);
-    background-size: cover;
-    opacity: 1;
+  background-image: url('/Images/ResidenEvil4.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  opacity: 0.15;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
 
-  }
+.BlackBackground {
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+  opacity: 1;
+
+}
+
 .navbar {
   position: sticky;
 }
@@ -28,33 +30,34 @@
   color: white;
 }
 
+/* Admin panel styles */
 
 /* Form styles */
 
-.register-body{
-  background-color:  #00b2b1;
+.register-body {
+  background-color: #00b2b1;
 }
 
-.main-register{
+.main-register {
   margin: 100px 0px;
 }
 
-.form-container{
+.form-container {
   padding: 20px;
-  border: 1px solid #004056; 
+  border: 1px solid #004056;
   color: #004056;
   border-radius: 30px;
 }
 
-@media screen and (min-width: 900px){
-  .form-container{
+@media screen and (min-width: 900px) {
+  .form-container {
     width: 30%;
     margin: auto;
   }
 }
 
-@media screen and (max-width: 899px){
-  .form-container{
+@media screen and (max-width: 899px) {
+  .form-container {
     width: 60%;
     margin: auto;
   }
@@ -63,19 +66,19 @@
 
 /* Nav styles */
 
-nav{
-  background: #00b2b1 ;
+nav {
+  background: #00b2b1;
   height: 80px;
   width: 100%;
 }
 
 /* Footer styles */
 
-footer{
-  background-color:  #004056;
+footer {
+  background-color: #004056;
 }
 
-.footerContainer{
+.footerContainer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -84,13 +87,13 @@ footer{
   padding-top: 30px;
 }
 
-.socialIcons{
+.socialIcons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.socialIcons a{
+.socialIcons a {
   text-decoration: none;
   padding: 10px;
   background-color: white;
@@ -98,23 +101,23 @@ footer{
   border-radius: 50%;
 }
 
-.socialIcons a i{
+.socialIcons a i {
   font-size: 2em;
   color: black;
   opacity: 0.9;
 }
 
-.socialIcons a:hover{
+.socialIcons a:hover {
   background-color: #111;
   transition: 0.5s;
 }
 
-.socialIcons a:hover i{
+.socialIcons a:hover i {
   color: white;
   transition: 0.5s;
 }
 
-.footerNav{
+.footerNav {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -122,7 +125,7 @@ footer{
 }
 
 
-.footerNav a{
+.footerNav a {
   color: white;
   margin: 20px;
   text-decoration: none;
@@ -131,94 +134,99 @@ footer{
   transition: 0.5s;
 }
 
-.footerNav a:hover{
+.footerNav a:hover {
   opacity: 1;
 }
 
-.footerBottom{
-  background-color:  #004056; 
+.footerBottom {
+  background-color: #004056;
   padding: 20px;
   text-align: center;
 }
 
 
-.footerBottom p{
+.footerBottom p {
   color: white;
 }
 
-.diseño{
+.diseño {
   opacity: calc(0.7);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 400   ;
-  margin: 0px 5px ;
+  font-weight: 400;
+  margin: 0px 5px;
 }
 
-@media(max-width:700px){
+@media(max-width:700px) {
 
-  .footerNav{
+  .footerNav {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
+
+  .container-admin {
+    width: 100%;
+    display: flex;
+  }
+
+  .container-user {
+    width: 100%;
+    display: flex;
+  }
+
+  .menu-container {
+    width: 15%;
+  }
+
+  .content-container {
+    width: 85%;
+  }
+
+  .menu-div {
+    background-color: #102e42;
+    height: 100vh;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-div a {
+    width: 100%;
+    text-decoration: none;
+    color: #098ca8;
+    margin-top: 30px;
+  }
+
+  .menu-div a:hover {
+    background-color: #0ffff8;
+  }
 }
 
-.container-user{
-  width: 100%;
-  display: flex;
-}
-
-.menu-container{
-  width: 15%;
-}
-
-.content-container{
-  width: 85%;
-}
-
-.menu-div {
-  background-color: #102e42;
-  height: 100vh;
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-div a {
-  width: 100%;
-  text-decoration: none;
-  color: #098ca8;
-  margin-top: 30px;
-}
-
-.menu-div a:hover {
-  background-color: #0ffff8;
-}
-
-@media screen and (max-width: 700px){
-  .container-admin{
+@media screen and (max-width: 700px) {
+  .container-admin {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .menu-container{
+  .menu-container {
     width: 100%;
   }
 
-  .content-container{
+  .content-container {
     width: 100%;
   }
 
-  .menu-div{
+  .menu-div {
     display: flex;
     flex-direction: row;
     height: 10vh;
   }
 
-  .menu-div a{
+  .menu-div a {
     margin: auto;
     width: auto;
   }
