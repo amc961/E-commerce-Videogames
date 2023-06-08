@@ -165,9 +165,6 @@ footer{
   }
 }
 
-
-
-
 .container-user{
   width: 100%;
   display: flex;
@@ -225,3 +222,4 @@ footer{
     margin: auto;
     width: auto;
   }
+}
