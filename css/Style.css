@@ -31,6 +31,11 @@
   display: flex;
 }
 
+.container-user{
+  width: 100%;
+  display: flex;
+}
+
 .menu-container{
   width: 15%;
 }
