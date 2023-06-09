@@ -1,15 +1,5 @@
-let botonAdd = document.getElementById("add")
-let botonDel = document.getElementById("del")
-let botonAct = document.getElementById("act")
-botonAdd.disabled = true
-botonDel.disabled = true
-botonAct.disabled = true
-
 
 const cargarProductos = () =>{
-    botonAdd.disabled = false
-    botonDel.disabled = false
-    botonAct.disabled = false
     let myDiv = document.getElementById("container-articles")
     let juegos = JSON.parse(localStorage.getItem("juegos"))
     let tabla = ``
