@@ -171,6 +171,19 @@ footer {
 
 /* Admin panel styles */
 
+.button-style{
+  background-color: #004056;
+  color: #0ffff8;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+}
+
+.button-style:hover{
+  color: #004056;
+  background-color: #0ffff8;
+}
+
 .container-admin{
   width: 100%;
   display: flex;
@@ -184,7 +197,9 @@ footer {
   width: 75%;
   height: 100vh;
   overflow: scroll;
-  padding: 5px 15px;
+  padding: 5px 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-div {

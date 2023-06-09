@@ -14,7 +14,7 @@ const cargarProductos = () =>{
         ${juego.descripcion}
         </td>
         <td>
-        <img src ="${juego.imagen}" class="img-card-style img-fluid" />
+        ${juego.imagen}
         </td>
         <td>
         ${juego.genero}
