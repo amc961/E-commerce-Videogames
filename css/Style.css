@@ -63,14 +63,22 @@
   }
 }
 
+/* User logged page */
+
+.buscadorJuegos{
+  display: flex;
+  justify-content: center;
+}
+
+
 
 /* Nav styles */
 
 nav {
   background: #00b2b1;
-  height: 80px;
   width: 100%;
 }
+
 
 /* Footer styles */
 
