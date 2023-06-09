@@ -33,7 +33,7 @@ const juegos = [
   
     {
       idJuego: 5,
-      nombre: "God of War (2018",
+      nombre: "God of War (2018)",
       descripcion: "Tales of Arise es un videojuego de rol de acción desarrollado y publicado por Bandai Namco Entertainment. Es una nueva entrega de la saga Tales of y su lanzamiento se produjo el 10 de septiembre de 2021 en Microsoft Windows, PlayStation 4 y 5 y Xbox One y Series X|S.",
       imagen: "https://image.api.playstation.com/vulcan/img/rnd/202010/2217/ax0V5TYMax06mLzmkWeQMiwH.jpg",
       genero: "Rol - Aventura - Accion - Hack and Slash"
