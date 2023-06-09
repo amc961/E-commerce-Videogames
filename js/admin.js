@@ -5,10 +5,19 @@ const cargarProductos = () =>{
     juegos.forEach(juego => {
         tabla = tabla + `<tr>
         <td>
-        ${juego.name}
+        ${juego.idJuego}
         </td>
         <td>
-        ${juego.genres[0].name}
+        ${juego.nombre}
+        </td>
+        <td>
+        ${juego.descripcion}
+        </td>
+        <td>
+        <img src ="${juego.imagen}" class="img-card-style img-fluid" />
+        </td>
+        <td>
+        ${juego.genero}
         </td>
         </tr>  `
     });
