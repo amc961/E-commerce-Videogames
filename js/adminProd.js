@@ -26,5 +26,14 @@ const cargarProductos = () =>{
 }
 
 const addProducto = () =>{
-    
+    let nombreJuego = document.getElementById("nombreJuego").value
+    let descripcionJuego = document.getElementById("descripcionJuego").value
+    let imagenJuego = document.getElementById("imagenJuego").value
+    let generoJuego = document.getElementById("generoJuego").value
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let id = juegos.length +1
+
+    juegos.push({idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego})
+    localStorage.setItem("juegos", JSON.stringify(juegos))
+    cargarProductos()
 }
