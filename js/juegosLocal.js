@@ -7,13 +7,16 @@ const traerJuegos = () => {
             cards = ``
             juegos.forEach(juego => {
                 console.log(juego.genres[0].name)
-                cards = cards + `<div class="card" style="width: 18rem;">
+                cards = cards + `
+                <div class="col d-flex justify-content-center">
+                <div class="card mt-3 mb-3" style="width: 18rem; ">
                 <img src=${juego.background_image} class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">${juego.name}</h5>
                   <p>Categoria: ${juego.genres[0].name}</p>
                   <a href="#" class="btn btn-primary">Ver mas</a>
                 </div>
+              </div>
               </div>`
             body.innerHTML = cards
             localStorage.setItem("juegos", JSON.stringify(juegos))
