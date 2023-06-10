@@ -51,6 +51,10 @@ const delProducto = () => {
         alert("Id inexistente")
     }else{
         juegos.splice(pos, 1)
+        /* Reacomodo el id de los juegos */
+        for (let i = 0; i < juegos.length; i++) {
+            juegos[i].idJuego = i+1
+        }
         localStorage.setItem("juegos", JSON.stringify(juegos))
         cargarProductos()
     }
