@@ -61,7 +61,7 @@ const delUser = () =>{
     }
 }
 
-const actProducto = () => {
+const actUser = () => {
     let nombreUser = document.getElementById("nomUs").value
     let apellidoUser = document.getElementById("apeUs").value
     let emailUser = document.getElementById("emUs").value
