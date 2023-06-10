@@ -260,3 +260,8 @@ footer {
   }
 }
 
+/* Estilo tablas */
+
+.admin-table th, td {
+  padding: 15px;
+}
