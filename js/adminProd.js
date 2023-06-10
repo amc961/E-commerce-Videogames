@@ -20,6 +20,9 @@ const cargarProductos = () => {
         <td>
         ${juego.genero}
         </td>
+        <td>
+        ${juego.esDestacado}
+        </td>
         </tr>  `
     });
     myDiv.innerHTML = tabla
@@ -30,12 +33,19 @@ const addProducto = () => {
     let descripcionJuego = document.getElementById("descripcionJuego").value
     let imagenJuego = document.getElementById("imagenJuego").value
     let generoJuego = document.getElementById("generoJuego").value
+    let dest = document.getElementById("destJuego").value
     let juegos = JSON.parse(localStorage.getItem("juegos"))
     let id = juegos.length + 1
-
-    juegos.push({ idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego })
+    let juego= { idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego, esDestacado: dest }
+    if(juego.esDestacado === "true"){
+        juegos.forEach((juegoGuardado)=> {
+            juegoGuardado.esDestacado = false
+        })
+    }
+    juegos.push(juego)
     localStorage.setItem("juegos", JSON.stringify(juegos))
     cargarProductos()
+
 }
 
 const delProducto = () => {
@@ -64,12 +74,18 @@ const actProducto = () => {
     let descripcionJuego = document.getElementById("descJuego").value
     let imagenJuego = document.getElementById("imgJuego").value
     let generoJuego = document.getElementById("genJuego").value
+    let dest = document.getElementById("destActJuego").value
     let juegos = JSON.parse(localStorage.getItem("juegos"))
     let id = parseInt(document.getElementById("idAct").value)
     let flag = false
-    let juego = {idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego}
+    let juego = {idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego, esDestacado: dest}
     for(let i = 0; i <juegos.length; i++){
         if(juegos[i].idJuego == id){
+            if(juego.esDestacado === "true"){
+                juegos.forEach((juegoGuardado)=> {
+                    juegoGuardado.esDestacado = false
+                })
+            }
             juegos[i] = juego
             flag = true
             localStorage.setItem("juegos", JSON.stringify(juegos))
@@ -79,4 +95,10 @@ const actProducto = () => {
     if(!flag){
         alert("No se encontro el juego que desea modificar")
     }
+}
+
+const cambiarDestacados = ()=>{
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+
+    localStorage.setItem(("juegos"), JSON.stringify(juegos))
 }

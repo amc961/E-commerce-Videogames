@@ -46,10 +46,10 @@ const juegos = [
   ]
 
 const cargar = () =>{
- /*   if(localStorage.length == 0) {
- 
-  } */
-  localStorage.setItem("juegos", JSON.stringify(juegos))
+  if(localStorage.length == 0) {
+    localStorage.setItem("juegos", JSON.stringify(juegos))
+  } 
+
 }
 
 cargar()
@@ -59,7 +59,7 @@ const cargarDestacado = () =>{
   let juegos = JSON.parse(localStorage.getItem("juegos"))
   let imagen =  ``
   juegos.forEach((juego) => {
-    if(juego.esDestacado){
+    if(juego.esDestacado == "true"){
       imagen = `<img src="${juego.imagen}" class="img-fluid" width="100%">`
     }
   });
