@@ -5,8 +5,8 @@ const buscador = (event) => {
     const {value} = event.target
     let palabra = value.toLowerCase()
     let filtro = juegos.filter((juego) => {
-        let nombreJuego = `${juego.name}`.toLowerCase()
-        let genero = `${juego.genres[0].name}`.toLowerCase()
+        let nombreJuego = `${juego.nombre}`.toLowerCase()
+        let genero = `${juego.genero}`.toLowerCase()
         return nombreJuego.includes(palabra) || genero.includes(palabra)
     })
     filtro.length > 0 ?
@@ -14,10 +14,10 @@ const buscador = (event) => {
     `
                 <div class="col d-flex justify-content-center">
                 <div class="card mt-3 mb-3" style="width: 18rem; ">
-                <img src=${juego.background_image} class="card-img-top" alt="...">
+                <img src=${juego.imagen} class="card-img-top img-card-style" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">${juego.name}</h5>
-                  <p>Categoria: ${juego.genres[0].name}</p>
+                  <h5 class="card-title">${juego.nombre}</h5>
+                  <p>Categoria: ${juego.genero}</p>
                   <a href="#" class="btn btn-primary">Ver mas</a>
                 </div>
               </div>

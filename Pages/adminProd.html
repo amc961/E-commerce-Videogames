@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/Style.css">
+    <title>Panel de administracion</title>
+</head>
+
+<body onload="cargarProductos()">
+    <main>
+        <div class="container-admin">
+            <div class="menu-container">
+                <div class="text-center menu-div">
+                    <a href="adminProd.html">Productos</a>
+                    <a href="adminUser.html">Usuarios</a>
+                    <a href="#">Salir</a>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="d-flex justify-content-around align-items-center w-100 mt-3 mb-5">
+                    <button type="button" id="add" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar</button>
+                    <button class="button-style" id="act" data-bs-toggle="modal" data-bs-target="#exampleModal3">Actualizar</button>
+                    <button class="button-style" id="del" data-bs-toggle="modal" data-bs-target="#exampleModal2">Eliminar</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Imagen</th>
+                                <th>Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody id="container-articles">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!-- Modal de agregar -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Cargar Juego</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex flex-column align-items-center justify-content-center mt-3">
+                    <div class="w-100 d-flex justify-content-around align-items-center">
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" name="nombre" id="nombreJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="descripcion">Descripcion: </label>
+                        <input type="text" name="descripcion" id="descripcionJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="descripcion">Imagen: </label>
+                        <input type="text" name="imagen" id="imagenJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="genero">Genero: </label>
+                        <input type="text" name="genero" id="generoJuego">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button-style" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="button-style" onclick="addProducto()" data-bs-dismiss="modal">Guardar Juego</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal para eliminar producto -->
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Juego</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="w-100 d-flex justify-content-around align-items-around">
+                        <label for="nombre">Id de juego: </label>
+                        <input type="text" name="id" id="idDel">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button-style" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="button-style" onclick="delProducto()" data-bs-dismiss="modal">Eliminar Juego</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal para actualizar juego -->
+          <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar Juego</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="w-100 d-flex justify-content-around align-items-around mt-3">
+                      <label for="nombre">ID: </label>
+                      <input type="text" name="id" id="idAct">
+                  </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="nom">Nombre: </label>
+                        <input type="text" name="nom" id="nomJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="desc">Descripcion: </label>
+                        <input type="text" name="desc" id="descJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="img">Imagen: </label>
+                        <input type="text" name="img" id="imgJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                        <label for="gen">Genero: </label>
+                        <input type="text" name="gen" id="genJuego">
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button-style" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="button-style" onclick="actProducto()" data-bs-dismiss="modal">Actualizar Juego</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../js/adminProd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
