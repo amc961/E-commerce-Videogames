@@ -58,3 +58,25 @@ const delProducto = () => {
         cargarProductos()
     }
 }
+
+const actProducto = () => {
+    let nombreJuego = document.getElementById("nomJuego").value
+    let descripcionJuego = document.getElementById("descJuego").value
+    let imagenJuego = document.getElementById("imgJuego").value
+    let generoJuego = document.getElementById("genJuego").value
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let id = parseInt(document.getElementById("idAct").value)
+    let flag = false
+    let juego = {idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego}
+    for(let i = 0; i <juegos.length; i++){
+        if(juegos[i].idJuego == id){
+            juegos[i] = juego
+            flag = true
+            localStorage.setItem("juegos", JSON.stringify(juegos))
+            cargarProductos()
+        }
+    }  
+    if(!flag){
+        alert("No se encontro el juego que desea modificar")
+    }
+}
