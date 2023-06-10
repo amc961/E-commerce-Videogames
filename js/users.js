@@ -17,8 +17,12 @@ users = [
     }
 ]
 
-const cargarUsers = () =>{
-    localStorage.setItem("users", JSON.stringify(users))
+ const cargarUsers = () =>{
+    if(localStorage.length){
+        localStorage.setItem("users", JSON.stringify(users))
+    }
 } 
 
-cargarUsers()
+if(localStorage.getItem())
+
+cargarUsers() 
