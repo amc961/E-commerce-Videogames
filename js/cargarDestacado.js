@@ -3,7 +3,7 @@ const cargarDestacado = () =>{
     let juegos = JSON.parse(localStorage.getItem("juegos"))
     let imagen =  ``
     juegos.forEach((juego) => {
-      if(juego.esDestacado === "true"){
+      if(juego.esDestacado == "true"){
         imagen = `<img src="${juego.imagen}" class="img-fluid" width="100%">`
       }
     });
