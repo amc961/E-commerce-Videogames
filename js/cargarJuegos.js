@@ -46,7 +46,10 @@ const juegos = [
   ]
 
 const cargar = () =>{
+  if(localStorage.length == 0) {
     localStorage.setItem("juegos", JSON.stringify(juegos))
+  } 
+
 }
 
 cargar()
