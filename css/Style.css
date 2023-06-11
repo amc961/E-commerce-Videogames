@@ -58,6 +58,7 @@
 
 .main-register {
   margin: 100px 0px;
+  height: 500px;
 }
 
 .form-container {
@@ -81,6 +82,10 @@
   .form-container {
     width: 60%;
     margin: auto;
+  }
+
+  .main-register{
+    height: auto;
   }
 
   .main-login{
