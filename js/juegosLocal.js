@@ -50,27 +50,18 @@ const cargarModales = () => {
 cargarModales()
 traerJuegos()
 
-const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
-const array =[]
-
-
-
-
-
 
 const agrcar = (idJuego) => {
-    const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
-    
-
-    const juegofilter = juegos.filter((game) => game.idJuego === idJuego)
-    
-
-    const JuegoExist = GameLS.filter((prod) => prod.idJuego ===idJuego)
+    let GameLS = JSON.parse(localStorage.getItem('carrito'))
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let juegofilter = juegos.filter((game) => game.idJuego.toString() === idJuego.toString())
+    console.log(juegofilter)
+    let JuegoExist = GameLS.filter((prod) => prod.idJuego.toString() ===idJuego.toString())
     
     
     if(JuegoExist.length === 0) {
-        array.push(juegofilter[0])
-    localStorage.setItem('carrito', JSON.stringify(array))
+        GameLS.push(juegofilter[0])
+    localStorage.setItem("carrito", JSON.stringify(GameLS))
     }
 
     
