@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../Images/logo.jpeg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/Style.css">
@@ -18,7 +19,7 @@
                 <div class="text-center menu-div">
                     <a href="adminProd.html">Productos</a>
                     <a href="adminUser.html">Usuarios</a>
-                    <a href="#">Salir</a>
+                    <a href="../index.html">Salir</a>
                 </div>
             </div>
             <div class="content-container">
@@ -36,6 +37,8 @@
                                 <th>Descripcion</th>
                                 <th>Imagen</th>
                                 <th>Categoria</th>
+                                <th>Precio</th>
+                                <th>Destacado</th>
                             </tr>
                         </thead>
                         <tbody id="container-articles">
@@ -71,6 +74,10 @@
                     <div class="w-100 d-flex justify-content-around align-items-center mt-3">
                         <label for="genero">Genero: </label>
                         <input type="text" name="genero" id="generoJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                      <label for="precioAdd">Precio: </label>
+                      <input type="text" name="precioAdd  " id="precioJuego">
                     </div>
                     <div class="w-100 d-flex justify-content-around align-items-center mt-3">
                       <label for="destAdd">Destacado: </label>
@@ -139,6 +146,10 @@
                     <div class="w-100 d-flex justify-content-around align-items-center mt-3">
                         <label for="gen">Genero: </label>
                         <input type="text" name="gen" id="genJuego">
+                    </div>
+                    <div class="w-100 d-flex justify-content-around align-items-center mt-3">
+                      <label for="precioAct">Precio: </label>
+                      <input type="text" name="precioAct  " id="precioActJuego">
                     </div>
                     <div class="w-100 d-flex justify-content-around align-items-center mt-3">
                       <label for="destAct">Destacado: </label>
