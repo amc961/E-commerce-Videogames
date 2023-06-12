@@ -37,7 +37,7 @@ const cargarModales = () => {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Me gusta</button>
-          <button type="button" class="btn btn-primary">Agregar a carrito</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar a carrito</button>
         </div>
       </div>
     </div>
