@@ -32,7 +32,7 @@ const juegos = [
   {
     idJuego: 4,
     nombre: "Resident Evil 4 Remake",
-    descripcion: "God of War es un videojuego de acción-aventura desarrollado por SCE Santa Monica Studio y publicado por Sony Interactive Entertainment. Su lanzamiento se produjo el 20 de abril de 2018 como un título exclusivo para la consola PlayStation 4.​ Posteriormente, fue lanzado en Microsoft Windows el 14 de enero de 2022.​",
+    descripcion: "Resident Evil 4 ​ —cuyo título original en Japón es Biohazard RE:4 —​ es un videojuego de acción-aventura de disparos en tercera persona perteneciente al subgénero de terror y supervivencia desarrollado por Capcom y estrenado el 24 de marzo del 2023.​",
     imagen: "https://img.youtube.com/vi/7RPSBeRIP6Y/maxresdefault.jpg",
     genero: "Horror",
     esDestacado: false,
@@ -42,7 +42,7 @@ const juegos = [
   {
     idJuego: 5,
     nombre: "God of War (2018)",
-    descripcion: "Tales of Arise es un videojuego de rol de acción desarrollado y publicado por Bandai Namco Entertainment. Es una nueva entrega de la saga Tales of y su lanzamiento se produjo el 10 de septiembre de 2021 en Microsoft Windows, PlayStation 4 y 5 y Xbox One y Series X|S.",
+    descripcion: "God of War es un videojuego de acción-aventura desarrollado por SCE Santa Monica Studio y publicado por Sony Interactive Entertainment. Su lanzamiento se produjo el 20 de abril de 2018 como un título exclusivo para la consola PlayStation 4.​ Posteriormente, fue lanzado en Microsoft Windows el 14 de enero de 2022.​",
     imagen: "https://image.api.playstation.com/vulcan/img/rnd/202010/2217/ax0V5TYMax06mLzmkWeQMiwH.jpg",
     genero: "Rol - Aventura - Accion - Hack and Slash",
     esDestacado: false,
