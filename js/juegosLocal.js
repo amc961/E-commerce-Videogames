@@ -10,7 +10,7 @@ const traerJuegos = () => {
     <div class="card-body">
       <h5 class="card-title">${juego.nombre}</h5>
       <p>Categoria: ${juego.genero}</p>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${juego.idJuego}">Ver mas</button>
+      <button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal${juego.idJuego}">Ver mas</button>
     </div>
   </div>
   </div>`
@@ -36,8 +36,8 @@ const cargarModales = () => {
           <p>Precio: ${juego.precio}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Me gusta</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar a carrito</button>
+          <button type="button" class="button-style" data-bs-dismiss="modal">Me gusta</button>
+          <button type="button" class="button-style" data-bs-dismiss="modal">Agregar a carrito</button>
         </div>
       </div>
     </div>
