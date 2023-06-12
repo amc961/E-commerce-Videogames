@@ -10,7 +10,9 @@ const traerJuegos = () => {
     <div class="card-body">
       <h5 class="card-title">${juego.nombre}</h5>
       <p>Categoria: ${juego.genero}</p>
-      <button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal${juego.idJuego}">Ver mas</button>
+      <p>Precio: ${juego.precio}</p>
+      <a href="#" class="btn btn-primary">Ver mas</a>
+      <a class="btn btn-primary" onclick="agrcar(${juego.idJuego})">Agregar al Carrito</a>
     </div>
   </div>
   </div>`
