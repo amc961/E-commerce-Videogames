@@ -80,7 +80,15 @@
   
 }
 
+.main-carrito{ 
+  height: 700px;
+}
+
 @media screen and (max-width: 899px) {
+  .main-carrito{
+    height: auto;
+  }
+  
   .form-container {
     width: 60%;
     margin: auto;
