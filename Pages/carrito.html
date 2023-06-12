@@ -54,22 +54,29 @@
         </nav> <!--fin navbar-->
     </header>
     <main>
-        <div class="w-100" id="imgDestacada">
+<div class="container">
+    <table class="table">
+    <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="tBody">
 
-        </div>
-        <div class="buscadorJuegos mt-5 mb-5 d-flex align-items-center flex-column">
-            <p>Buscar</p>
-            <form class="d-flex mx-5" role="search">
-                <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
-            </form>
-        </div>
-        
-        <div class="container text-center mt-5 mb-5">
-            <div class="row" id="myCards">
 
-            </div>
-        </div>
 
+      </tbody>
+    </table>
+    <div class="container text-center">
+Total a Pagar:
+    </div>
+    <div class="container text-center" id="totalfinal"></div>
+    <button type="button" class="btn btn-primary w-100" onclick="alertcompra()">Pagar</button>
+    
+</div>
     </main>
     <footer>
         <div class="footerContainer">
@@ -94,10 +101,8 @@
             <p>Derechos &copy;2023; Diseñado por <span class="diseño">Game Paradise</span></p>
         </div>
     </footer>
-    <script src="../js/cargarDestacado.js"></script>
     <script src="../js/cargarJuegos.js"></script>
-    <script src="../js/juegosLocal.js"></script>
-    <script src="../js/buscador.js"></script>
+    <script src="../js/carrito.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
