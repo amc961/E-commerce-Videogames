@@ -70,6 +70,7 @@ const users = [
 ]
 
 const meGusta = []
+const carrito = []
 
 
 
@@ -77,6 +78,7 @@ const cargar = () => {
   localStorage.setItem("juegos", JSON.stringify(juegos))
   localStorage.setItem("users", JSON.stringify(users))
   localStorage.setItem("meGusta", JSON.stringify(meGusta))
+  localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 cargar()
