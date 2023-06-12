@@ -54,10 +54,6 @@ const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
 const array =[]
 
 
-
-
-
-
 const agrcar = (idJuego) => {
     const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
     
