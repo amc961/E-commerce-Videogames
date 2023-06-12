@@ -11,8 +11,7 @@ const traerJuegos = () => {
       <h5 class="card-title">${juego.nombre}</h5>
       <p>Categoria: ${juego.genero}</p>
       <p>Precio: ${juego.precio}</p>
-      <a href="#" class="btn btn-primary">Ver mas</a>
-      <a class="btn btn-primary" onclick="agrcar(${juego.idJuego})">Agregar al Carrito</a>
+      <button type="button" class="button-style" data-bs-toggle="modal" data-bs-target="#exampleModal${juego.idJuego}">Ver mas</button>
     </div>
   </div>
   </div>`
@@ -39,7 +38,7 @@ const cargarModales = () => {
         </div>
         <div class="modal-footer">
           <button type="button" class="button-style" data-bs-dismiss="modal">Me gusta</button>
-          <button type="button" class="button-style" data-bs-dismiss="modal">Agregar a carrito</button>
+          <button type="button" class="button-style" data-bs-dismiss="modal" onclick="agrcar(${juego.idJuego})">Agregar a carrito</button>
         </div>
       </div>
     </div>
@@ -50,3 +49,29 @@ const cargarModales = () => {
 
 cargarModales()
 traerJuegos()
+
+const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
+const array =[]
+
+
+
+
+
+
+const agrcar = (idJuego) => {
+    const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
+    
+
+    const juegofilter = juegos.filter((game) => game.idJuego === idJuego)
+    
+
+    const JuegoExist = GameLS.filter((prod) => prod.idJuego ===idJuego)
+    
+    
+    if(JuegoExist.length === 0) {
+        array.push(juegofilter[0])
+    localStorage.setItem('carrito', JSON.stringify(array))
+    }
+
+    
+}

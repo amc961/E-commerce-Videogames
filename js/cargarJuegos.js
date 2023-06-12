@@ -81,29 +81,4 @@ const cargar = () => {
 
 cargar()
 
-const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
-const array =[]
-
-
-
-
-
-
-const agrcar = (idJuego) => {
-    const GameLS = JSON.parse(localStorage.getItem('carrito')) || []
-    
-
-    const juegofilter = juegos.filter((game) => game.idJuego === idJuego)
-    
-
-    const JuegoExist = GameLS.filter((prod) => prod.idJuego ===idJuego)
-    
-    
-    if(JuegoExist.length === 0) {
-        array.push(juegofilter[0])
-    localStorage.setItem('carrito', JSON.stringify(array))
-    }
-
-    
-}
 
