@@ -322,3 +322,27 @@ footer {
 .admin-table th, td {
   padding: 15px;
 }
+
+
+/* Sobre Nosotros */
+
+
+.main1{
+  color: #004056;
+  margin-bottom: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.main2 {
+  padding: 2vw;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.body-nosotros {
+  /* background-image: url(https://static.videezy.com/system/resources/thumbnails/000/009/069/original/shining-rays-of-blue-4k-motion-background.jpg); */
+  background-color: #00b2b1;
+
+}
