@@ -11,7 +11,7 @@ const cargarProductos = () => {
         <td>
         ${juego.nombre}
         </td>
-        <td>
+        <td class="achicarTexto">
         ${juego.descripcion}
         </td>
         <td>
@@ -49,12 +49,12 @@ const addProducto = () => {
     juegos.push(juego)
     localStorage.setItem("juegos", JSON.stringify(juegos))
     cargarProductos()
-    document.getElementById("nombreJuego").value=""
-    document.getElementById("descripcionJuego").value=""
-    document.getElementById("imagenJuego").value=""
-    document.getElementById("generoJuego").value=""
-    document.getElementById("precioJuego").value=""
-    document.getElementById("destJuego").value=""
+    document.getElementById("nombreJuego").value = ""
+    document.getElementById("descripcionJuego").value = ""
+    document.getElementById("imagenJuego").value = ""
+    document.getElementById("generoJuego").value = ""
+    document.getElementById("precioJuego").value = ""
+    document.getElementById("destJuego").value = ""
 
 }
 
@@ -77,7 +77,7 @@ const delProducto = () => {
         localStorage.setItem("juegos", JSON.stringify(juegos))
         cargarProductos()
     }
-    document.getElementById("idDel").value=""
+    document.getElementById("idDel").value = ""
 }
 
 const actProducto = () => {
@@ -107,11 +107,11 @@ const actProducto = () => {
     if (!flag) {
         alert("No se encontro el juego que desea modificar")
     }
-    document.getElementById("nomJuego").value=""
-    document.getElementById("descJuego").value=""
-    document.getElementById("imgJuego").value=""
-    document.getElementById("genJuego").value=""
-    document.getElementById("precioActJuego").value=""
-    document.getElementById("destActJuego").value=""
-    document.getElementById("idAct").value=""
+    document.getElementById("nomJuego").value = ""
+    document.getElementById("descJuego").value = ""
+    document.getElementById("imgJuego").value = ""
+    document.getElementById("genJuego").value = ""
+    document.getElementById("precioActJuego").value = ""
+    document.getElementById("destActJuego").value = ""
+    document.getElementById("idAct").value = ""
 }
