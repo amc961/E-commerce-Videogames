@@ -211,6 +211,12 @@ footer {
 
 /* Admin panel styles */
 
+.achicarTexto{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .button-style{
   background-color: #004056;
   color: #0ffff8;
@@ -321,6 +327,7 @@ footer {
 
 .admin-table th, td {
   padding: 15px;
+
 }
 
 
