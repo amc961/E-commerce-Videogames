@@ -13,10 +13,10 @@ tr.innerHTML =
 <tr>
     <td>${prod.nombre}</td>
     <td>
-    <input type='number' class='w-50' name='cantidad' id='${prod.idJuego}'>
+    <input type='number' value="0" class='w-50 inputNumber' name='cantidad' id='${prod.idJuego}'>
     </td>
     <td>${prod.precio}</td>
-    <td id='${totaltotal}'<>0</td>
+    <td id='${totaltotal}' class="totale" >0</td>
 </tr>
 `
 tBody.appendChild(tr)
@@ -37,9 +37,8 @@ const changeinput = (event, precio, totaltotal) => {
     const {name, value, idJuego} = event.target
     totalinput = precio * value
     total.innerText=totalinput
-    console.log(totalinput)
-    resultado = resultado + totalinput
-    totalfinal.innerText=resultado
+    sumatoriaNumeros()
+
 }
 
 
@@ -49,7 +48,16 @@ const changeinput = (event, precio, totaltotal) => {
     }
     else {
         alert('No tienes cosas por comprar :(')
+     
     }
  }
 
 
+ const sumatoriaNumeros = () =>{
+    let sumatoria = 0
+    let totales = document.getElementsByClassName("totale")
+    for(let i = 0; i < totales.length; i++){
+        sumatoria  = sumatoria + parseInt(totales[i].innerHTML)
+    }
+    totalfinal.innerHTML = sumatoria
+}
