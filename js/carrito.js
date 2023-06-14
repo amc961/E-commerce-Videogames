@@ -13,7 +13,7 @@ tr.innerHTML =
 <tr>
     <td>${prod.nombre}</td>
     <td>
-    <input type='number' value="0" class='w-50 inputNumber' name='cantidad' id='${prod.idJuego}'>
+    <input type='number' class='w-50 inputNumber' name='cantidad' id='${prod.idJuego}'>
     </td>
     <td>${prod.precio}</td>
     <td id='${totaltotal}' class="totale" >0</td>
@@ -59,5 +59,6 @@ const changeinput = (event, precio, totaltotal) => {
     for(let i = 0; i < totales.length; i++){
         sumatoria  = sumatoria + parseInt(totales[i].innerHTML)
     }
+    resultado = sumatoria
     totalfinal.innerHTML = sumatoria
 }
