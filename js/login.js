@@ -7,11 +7,11 @@ function validarInfo() {
       if (userName.value === usuario.email && pass.value === usuario.pass) {
         encontrado = true
         if(usuario.esAdmin){
-            location.href = "../Pages/admin.html"
+            location.href = `../Pages/admin.html?=${usuario.id}`
         }
         else{
-            location.href = "../Pages/usuarioLogueado.html"
-        }
+            location.href = `../Pages/usuarioLogueado.html?=${usuario.id}`
+    }
       }
     })
     if(!encontrado){
