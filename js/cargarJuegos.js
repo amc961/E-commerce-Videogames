@@ -80,6 +80,7 @@ const cargar = () => {
   localStorage.setItem("meGusta", JSON.stringify(meGusta))
   localStorage.setItem("carrito", JSON.stringify(carrito))
   localStorage.setItem("loggeduser", JSON.stringify(user))
+  location.href="Pages/inicio.html"
 }
 
 cargar()
