@@ -66,3 +66,8 @@ const agrcar = (idJuego) => {
 
     
 }
+
+function cerrarsesion(){
+  localStorage.removeItem("loggeduser")
+  
+}
