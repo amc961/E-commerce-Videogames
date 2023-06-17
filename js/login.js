@@ -3,14 +3,18 @@ function validarInfo() {
     let userName = document.getElementById("InputEmail");
     let pass = document.getElementById("InputPassword");
     let encontrado = false
+    let usuariologged = []
     users.forEach((usuario) =>{
       if (userName.value === usuario.email && pass.value === usuario.pass) {
         encontrado = true
+        const idUserlogged = users.filter((usuario) => usuario.email === userName.value);
+        usuariologged.push(idUserlogged[0])
+        localStorage.setItem('loggeduser',JSON.stringify(usuariologged))
         if(usuario.esAdmin){
-            location.href = `../Pages/admin.html?=${usuario.id}`
+            location.href = `../Pages/admin.html`
         }
         else{
-            location.href = `../Pages/usuarioLogueado.html?=${usuario.id}`
+            location.href = `../Pages/usuarioLogueado.html`
     }
       }
     })

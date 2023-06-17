@@ -1,10 +1,9 @@
-let userlocalStorage = JSON.parse(localStorage.getItem('users')) 
+let userss = JSON.parse(localStorage.getItem('loggeduser')); // Obtener los usuarios del localStorage y convertirlos a objeto
 
-userlocalStorage.forEach(usuario => {
 
-if(!usuario.logueado){
-  location.href = '../Pages/LogIn.html'
-} else { }
+          if (userss.esAdmin) {
+            location.href = "../Pages/adminProd.html"; // Redirigir al usuario administrador
+          }
+function cerrarsesion(){
+  localStorage.removeItem("loggeduser")
 }
-
-);

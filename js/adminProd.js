@@ -115,3 +115,7 @@ const actProducto = () => {
     document.getElementById("destActJuego").value = ""
     document.getElementById("idAct").value = ""
 }
+
+function cerrarsesion(){
+    localStorage.removeItem("loggeduser")
+  }
