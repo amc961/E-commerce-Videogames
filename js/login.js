@@ -7,8 +7,7 @@ function validarInfo() {
     users.forEach((usuario) =>{
       if (userName.value === usuario.email && pass.value === usuario.pass) {
         encontrado = true
-        const idUserlogged = users.filter((usuario) => usuario.email === userName.value);
-        usuariologged.push(idUserlogged[0])
+        usuariologged.push(usuario)
         localStorage.setItem('loggeduser',JSON.stringify(usuariologged))
         if(usuario.esAdmin){
             location.href = `../Pages/admin.html`
