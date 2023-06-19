@@ -85,3 +85,19 @@ const validarInputComun = (input, div) => {
     }
     return inputComun
 }
+
+const validarAdmin = (input, div) => { 
+    let inputComun = false
+    if(input.value.length === 0){
+        div.innerHTML ="El campo no debe estar vacio"
+        input.style.borderBlockColor = "red"
+    }else if(input.value !== "true"  || input.value !== "false"){
+        div.innerHTML = "El campo debe contener true o false"
+        input.style.borderBlockColor = "red"
+    }else{
+        div.innerHTML = "Campo correcto"
+        input.style.borderBlockColor = "green"
+        inputComun = true
+    }
+    return inputComun
+}
