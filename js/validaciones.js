@@ -16,3 +16,10 @@ const validarRegistro = () =>{
     }
 }
 
+const validarBusqueda = () => {
+    let buscadorTexto = document.getElementById("searchText")
+    let validSearch = validarInputComun(busqueda, buscadorTexto)
+}
+
+let busqueda = document.getElementById("idInputSearch")
+busqueda.addEventListener("input", validarBusqueda)

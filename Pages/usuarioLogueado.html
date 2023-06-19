@@ -2,184 +2,165 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Página Principal</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="../Images/logo.jpeg" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/Style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta charset="UTF-8">
+  <title>Página Principal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="../Images/logo.jpeg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/Style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
 <body onload="verificacionuser()">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-primary" id="navbar">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-primary" id="navbar">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <!-- logo -->
-            <a class="navbar-brand" href="#">
-                <img src="../Images/logo.jpeg" width="30" height="30" alt="">
-            </a>
+      <!-- logo -->
+      <a class="navbar-brand" href="#">
+        <img src="../Images/logo.jpeg" width="30" height="30" alt="">
+      </a>
 
-            <!-- enlaces -->
-            <div class="collapse navbar-collapse" id="opciones">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="usuarioLogueado.html">Game Paradise</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="nosotrosUser.html">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          style="color: black"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                          onclick="traerMeGusta()"
-                        >   Favoritos
-                        </button> <!--boton llama o trae al meGusta  -->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">Mi Carrito</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Error404.html">Mi Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="cerrarsesion()" href="inicio.html">Cerrar Sesion</a>
-                    </li>
-                </ul>
-            </div>
-        </nav> <!--fin navbar-->
-    </header>
-    <main>
-        <div class="w-100" id="imgDestacada">
+      <!-- enlaces -->
+      <div class="collapse navbar-collapse" id="opciones">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="usuarioLogueado.html">Game Paradise</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotrosUser.html">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" style="color: black" data-toggle="modal"
+              data-target="#exampleModal" onclick="traerMeGusta()"> Favoritos
+            </button> <!--boton llama o trae al meGusta  -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrito.html">Mi Carrito</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Error404.html">Mi Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="cerrarsesion()" href="inicio.html">Cerrar Sesion</a>
+          </li>
+        </ul>
+      </div>
+    </nav> <!--fin navbar-->
+  </header>
+  <main>
+    <div class="w-100" id="imgDestacada">
 
+    </div>
+    <div class="buscadorJuegos mt-5 mb-5 d-flex align-items-center flex-column">
+      <p>Buscar</p>
+      <form class="d-flex mx-5" role="search">
+        <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar" aria-label="Search">
+      </form>
+      <div id="searchText" class="form-text d-flex justify-content-center"></div>
+    </div>
+
+    <div class="container text-center mt-5 mb-5">
+      <div class="row" id="myCards">
+
+      </div>
+    </div>
+    <div id="modals">
+
+    </div>
+
+  </main>
+  <footer>
+    <div class="footerContainer">
+      <div class="socialIcons">
+        <a href="Error404.html"><i class="fa-brands fa-facebook"></i></a>
+        <a href="Error404.html"><i class="fa-brands fa-instagram"></i></a>
+        <a href="Error404.html"><i class="fa-brands fa-twitter"></i></a>
+        <a href="Error404.html"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="Error404.html"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+
+        <a href="usuarioLogueado.html">INICIO</a>
+        <a href="Error404.html">NOVEDADES</a>
+        <a href="Error404.html">CATALOGO</a>
+        <a href="Error404.html">CONTACTO</a>
+        <a href="nosotrosUser.html">EMPRESA</a>
+
+      </div>
+    </div>
+    <div class="footerBottom">
+      <p>Derechos &copy;2023; Diseñado por <span class="diseño">Game Paradise</span></p>
+    </div>
+  </footer>
+  <!--Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Favoritos
+          </h5>
+
+          <!-- ??? ver revisar porque no hace nada  -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="buscadorJuegos mt-5 mb-5 d-flex align-items-center flex-column">
-            <p>Buscar</p>
-            <form class="d-flex mx-5" role="search">
-                <input class="form-control me-2" id="idInputSearch" type="search" placeholder="Buscar"
-                    aria-label="Search">
-            </form>
+        <!-- start lista/tabla favoritos-->
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nª</th>
+                <th scope="col">Juego</th>
+                <th scope="col">Accion</th>
+              </tr>
+            </thead>
+
+            <tbody id="tBody"></tbody>
+          </table>
         </div>
 
-        <div class="container text-center mt-5 mb-5">
-            <div class="row" id="myCards">
-
-            </div>
+        <div class="modal-footer">
+          <button type="button" class="button-style" data-dismiss="modal">
+            Cerrar
+          </button>
         </div>
-        <div id="modals">
+      </div>
+    </div>
+  </div>
+  <!--fin modal-->
 
-        </div>
-
-    </main>
-    <footer>
-        <div class="footerContainer">
-            <div class="socialIcons">
-                <a href="Error404.html"><i class="fa-brands fa-facebook"></i></a>
-                <a href="Error404.html"><i class="fa-brands fa-instagram"></i></a>
-                <a href="Error404.html"><i class="fa-brands fa-twitter"></i></a>
-                <a href="Error404.html"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="Error404.html"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-            <div class="footerNav">
-
-                <a href="usuarioLogueado.html">INICIO</a>
-                <a href="Error404.html">NOVEDADES</a>
-                <a href="Error404.html">CATALOGO</a>
-                <a href="Error404.html">CONTACTO</a>
-                <a href="nosotrosUser.html">EMPRESA</a>
-
-            </div>
-        </div>
-        <div class="footerBottom">
-            <p>Derechos &copy;2023; Diseñado por <span class="diseño">Game Paradise</span></p>
-        </div>
-    </footer>
-                  <!--Modal -->
-                  <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          Favoritos
-                        </h5>
-  
-                        <!-- ??? ver revisar porque no hace nada  -->
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                       <!-- start lista/tabla favoritos-->
-                      <div class="modal-body">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th scope="col">Nª</th>
-                              <th scope="col">Juego</th>
-                              <th scope="col">Accion</th>
-                            </tr>
-                          </thead>
-                         
-                          <tbody id="tBody"></tbody>
-                        </table>
-                      </div>
-  
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="button-style"
-                          data-dismiss="modal"
-                        >
-                          Cerrar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--fin modal-->
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <script src="../js/cargarDestacado.js"></script>
-    <script src="../js/juegosLocal.js"></script>
-    <script src="../js/buscador.js"></script>
-    <script src="../js/favoritos.js"></script>
-    <script src="../js/privateruteUser.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="../js/formValidations.js"></script>
+  <script src="../js/validaciones.js"></script>
+  <script src="../js/cargarDestacado.js"></script>
+  <script src="../js/juegosLocal.js"></script>
+  <script src="../js/buscador.js"></script>
+  <script src="../js/favoritos.js"></script>
+  <script src="../js/privateruteUser.js"></script>
 </body>
 
 </html>
