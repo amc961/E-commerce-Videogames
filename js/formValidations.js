@@ -9,7 +9,7 @@ const validarEmail = (input, div) => {
         input.style.borderBlockColor = "red"
     }
     else {
-        div.innerHTML = "email correcto"
+        div.innerHTML = ""
         input.style.borderBlockColor = "green"
         emailValido = true
     }
@@ -27,7 +27,7 @@ const validarPass = (input, div) => {
         input.style.borderBlockColor = "red"
     }
     else {
-        div.innerHTML = "Paswword correcto"
+        div.innerHTML = ""
         input.style.borderBlockColor = "green"
         passValido = true
     }
@@ -45,7 +45,7 @@ const validarText = (input, div) =>{
         input.style.borderBlockColor = "red"
     }
     else {
-        div.innerHTML = "Campo correcto"
+        div.innerHTML = ""
         input.style.borderBlockColor = "green"
         textoValido = true
     }
@@ -63,7 +63,7 @@ const validarNumber = (input, div) =>{
         input.style.borderBlockColor = "red"
     }
     else {
-        div.innerHTML = "Campo correcto"
+        div.innerHTML = ""
         input.style.borderBlockColor = "green"
         numeroValido = true
     }
@@ -79,7 +79,7 @@ const validarInputComun = (input, div) => {
         div.innerHTML = "El campo debe contener entre 2 y 100 caracteres"
         input.style.borderBlockColor = "red"
     }else{
-        div.innerHTML = "Campo correcto"
+        div.innerHTML = ""
         input.style.borderBlockColor = "green"
         inputComun = true
     }
@@ -95,7 +95,7 @@ const validarAdmin = (input, div) => {
         div.innerHTML = "El campo debe contener true o false"
         input.style.borderBlockColor = "red"
     }else{
-        div.innerHTML = "Campo correcto"
+        div.innerHTML = ""
         input.style.borderBlockColor = "green"
         inputComun = true
     }

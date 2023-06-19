@@ -44,7 +44,7 @@ const addProducto = () => {
     let generoTexto = document.getElementById("generoProdTexto")
     let precioTexto = document.getElementById("precioProdTexto")
     let destacadoTexto = document.getElementById("destProdTexto")
-    let validNombre = validarText(document.getElementById("nombreJuego"), nombreTexto)
+    let validNombre = validarInputComun(document.getElementById("nombreJuego"), nombreTexto)
     let validDesc = validarInputComun(document.getElementById("descripcionJuego"), descripcionTexto)
     let validGenero = validarInputComun(document.getElementById("generoJuego"), generoTexto)
     let validPrecio = validarNumber(document.getElementById("precioJuego"), precioTexto)
