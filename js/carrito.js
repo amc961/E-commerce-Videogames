@@ -1,5 +1,5 @@
 const CarritoLS = JSON.parse(localStorage.getItem('carrito'))
-const tBody = document.getElementById('tBody')
+const tBody = document.getElementById('tableBody')
 
 CarritoLS.forEach((prod) =>  {
 

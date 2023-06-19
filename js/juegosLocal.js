@@ -37,7 +37,7 @@ const cargarModales = () => {
           <p>Precio: ${juego.precio}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="button-style" data-bs-dismiss="modal">Me gusta</button>
+          <button type="button" class="button-style" data-bs-dismiss="modal" onclick="agregaMeGusta(${juego.idJuego})">Me gusta</button>
           <button type="button" class="button-style" data-bs-dismiss="modal" onclick="agrcar(${juego.idJuego})">Agregar a carrito</button>
         </div>
       </div>
@@ -66,3 +66,28 @@ const agrcar = (idJuego) => {
 
     
 }
+
+
+const agregaMeGusta = (idJuego) => {                                        
+  let meGustaList = JSON.parse(localStorage.getItem("meGusta"));             // se guarda lo que gusta
+  let juegos = JSON.parse(localStorage.getItem("juegos"));                   // lista de juegos  
+
+                                   
+  let juegoSeleccionado = juegos.filter(                                      //seleccionar el juego q indica el parametro idJuego, recupero el juego
+    (game) => game.idJuego.toString() === idJuego.toString()                  
+  );
+
+  
+  let juegoEnLista = meGustaList.filter(                                       //checkeo si el juego ya esta en la lista de me gusta, lo devuelve
+    (juego) => juego.idJuego.toString() === idJuego.toString()
+  );
+
+  if (juegoEnLista.length === 0) {
+    meGustaList.push({
+      idJuego: juegoSeleccionado[0].idJuego,
+      nombre: juegoSeleccionado[0].nombre,
+    });
+    localStorage.setItem("meGusta", JSON.stringify(meGustaList));
+  }
+};
+//fin me gusta 
