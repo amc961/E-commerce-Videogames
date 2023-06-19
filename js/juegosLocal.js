@@ -91,3 +91,7 @@ const agregaMeGusta = (idJuego) => {
   }
 };
 //fin me gusta 
+function cerrarsesion(){
+  localStorage.removeItem("loggeduser")
+  
+}

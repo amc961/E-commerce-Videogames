@@ -83,3 +83,7 @@ const actUser = () => {
         alert("No se encontro el usuario que desea modificar")
     }
 }
+
+function cerrarsesion(){
+    localStorage.removeItem("loggeduser")
+  }

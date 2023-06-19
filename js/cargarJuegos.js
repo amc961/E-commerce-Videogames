@@ -32,7 +32,7 @@ const juegos = [
   {
     idJuego: 4,
     nombre: "Resident Evil 4 Remake",
-    descripcion: "Resident Evil 4 ​ —cuyo título original en Japón es Biohazard RE:4 —​ es un videojuego de acción-aventura de disparos en tercera persona perteneciente al subgénero de terror y supervivencia desarrollado por Capcom y estrenado el 24 de marzo del 2023.​",
+    descripcion: "Resident Evil 4​ —cuyo título original en Japón es Biohazard RE:4 —​ es un videojuego de acción-aventura de disparos en tercera persona perteneciente al subgénero de terror y supervivencia desarrollado por Capcom y estrenado el 24 de marzo del 2023.​",
     imagen: "https://img.youtube.com/vi/7RPSBeRIP6Y/maxresdefault.jpg",
     genero: "Horror",
     esDestacado: false,
@@ -57,7 +57,7 @@ const users = [
     apellido: "Lobos",
     email: "damianlobos24@gmail.com",
     pass: "yo24101994",
-    esAdmin: true
+    esAdmin: true,
   },
   {
     id: 2,
@@ -65,13 +65,13 @@ const users = [
     apellido: "Lobos",
     email: "zoeLobos1@gmail.com",
     pass: "09052018Zoe",
-    esAdmin: false
+    esAdmin: false,
   }
 ]
 
 const meGusta = []
 const carrito = []
-
+const loggeduser = []
 
 
 const cargar = () => {
@@ -79,6 +79,7 @@ const cargar = () => {
   localStorage.setItem("users", JSON.stringify(users))
   localStorage.setItem("meGusta", JSON.stringify(meGusta))
   localStorage.setItem("carrito", JSON.stringify(carrito))
+  localStorage.setItem("loggeduser", JSON.stringify(loggeduser))
   location.href="Pages/inicio.html"
 }
 

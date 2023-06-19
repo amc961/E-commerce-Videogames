@@ -18,7 +18,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
-<body>
+<body onload="verificacionuser()">
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-primary" id="navbar">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
@@ -57,7 +57,7 @@
                         <a class="nav-link" href="Error404.html">Mi Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="inicio.html">Cerrar Sesion</a>
+                        <a class="nav-link" onclick="cerrarsesion()" href="inicio.html">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>
@@ -179,6 +179,7 @@
     <script src="../js/juegosLocal.js"></script>
     <script src="../js/buscador.js"></script>
     <script src="../js/favoritos.js"></script>
+    <script src="../js/privateruteUser.js"></script>
 </body>
 
 </html>
