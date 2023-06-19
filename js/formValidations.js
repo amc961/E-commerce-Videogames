@@ -91,7 +91,7 @@ const validarAdmin = (input, div) => {
     if(input.value.length === 0){
         div.innerHTML ="El campo no debe estar vacio"
         input.style.borderBlockColor = "red"
-    }else if(input.value !== "true"  || input.value !== "false"){
+    }else if(input.value.toString() != "true"  && input.value.toString() != "false"){
         div.innerHTML = "El campo debe contener true o false"
         input.style.borderBlockColor = "red"
     }else{
