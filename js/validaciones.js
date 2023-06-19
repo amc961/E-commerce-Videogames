@@ -12,7 +12,20 @@ const validarRegistro = () =>{
     let validEmail = validarEmail(email, emailTexto)
     let validPass = validarPass(passw, passTexto)
     if(validName && validApe && validEmail && validPass){
-        alert("Genial")
+        let users = JSON.parse(localStorage.getItem("users"))
+        let id = users.length + 1
+        let user = {id: id, nombre: nombre.value,  apellido: apellido.value, email: email.value, pass: passw.value, esAdmin: false}
+        let usuarios = users.filter((usuario) => usuario.email === user.email)
+        if(usuarios.length >0){
+            alert("Email ya registrado")
+        }else{
+            users.push(user)
+            localStorage.setItem("users", JSON.stringify(users))
+            nombre.value = ""
+            apellido.value = ""
+            email.value = ""
+            passw.value =""
+        }
     }
 }
 
