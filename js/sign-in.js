@@ -74,10 +74,12 @@ switch (name) {
 
 const register = ()=>{
     const {name,pass,email,lastName} = objectForm
-   
+    let users = JSON.parse(localStorage.getItem("users"))
+    let idU = users.length + 1
+    let usuario = {id: idU, nombre: name, apellido: lastName, email: email, pass: pass, esAdmin: false}
     if (  name && pass && email && lastName) {
-        arrayUsuarios.push(objectForm)
-        localStorage.setItem ("users", JSON.stringify(arrayUsuarios))
+        users.push(usuario)
+        localStorage.setItem ("users", JSON.stringify(users))
     }
     
     if (!name && !pass && ! email && ! lastName) {
