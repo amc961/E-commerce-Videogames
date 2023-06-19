@@ -56,7 +56,7 @@ const users = [
     nombre: "Damian",
     apellido: "Lobos",
     email: "damianlobos24@gmail.com",
-    pass: "yo24101994",
+    pass: "Yo24101994",
     esAdmin: true,
   },
   {
