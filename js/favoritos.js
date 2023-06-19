@@ -23,7 +23,7 @@ const traerMeGusta = () => {
     boton.textContent = "Borrar";
   boton.className = "button-style"
     boton.addEventListener("click", function () {               
-      borrarMeGusta(index);
+      borrarMeGusta(meGustaItem.idJuego);
       fila.remove(); // Elimina la fila de la vista
     });
     celdaBoton.appendChild(boton);
@@ -35,9 +35,8 @@ const traerMeGusta = () => {
 
 const borrarMeGusta = (index) => {                                         //recupera lo guardado en el locals.
   let meGustaList = JSON.parse(localStorage.getItem("meGusta"));           //arreglo de objetos
-  meGustaList.splice(index, 1);                                            // Elimina el elemento del array
-
-  localStorage.setItem("meGusta", JSON.stringify(meGustaList));             // Actualiza el localStorage removiendo lo que ya no se necesita
+  let juegofilter = meGustaList.filter((game) => game.idJuego.toString() !== index.toString())                                      // Elimina el elemento del array
+  localStorage.setItem("meGusta", JSON.stringify(juegofilter));             // Actualiza el localStorage removiendo lo que ya no se necesita
 };
 
 
