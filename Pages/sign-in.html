@@ -51,21 +51,29 @@
             <form class="text-center form-container">
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nameInput" aria-describedby="emailHelp">
-                </div>
+                    <input type="text" class="form-control" id="nameInput" aria-describedby="emailHelp" name="name">
+                    <div id="msgError" class="form-text text-danger">
+                        <small>campo contraseña vacio</small>
+                        </div>
                 <div class="mb-3">
                     <label for="lastNameInput" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="lastNameInput" aria-describedby="emailHelp">
-                </div>
+                    <input type="text" class="form-control" id="lastNameInput" aria-describedby="emailHelp" name="lastName">
+                    <div id="divErrLast" class="form-text text-danger">
+                        <small>campo contraseña vacio</small>
+                        </div>
                 <div class="mb-3">
                     <label for="emailInput" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
-                </div>
+                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" name="email">
+                    <div id="divErrEmail" class="form-text text-danger">
+                        <small>campo contraseña vacio</small>
+                        </div>
                 <div class="mb-3">
                     <label for="passInput" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="passInput" size="30">
-                </div>
-                <button type="button" class="button-style">Enviar</button>
+                    <input type="password" class="form-control" id="passInput" size="30" name="pass">
+                    <div id="divErrPass" class="form-text text-danger">
+                        <small>campo contraseña vacio</small>
+                        </div>
+                <button type="button" class="button-style" id="buttonRegister">Enviar</button>
             </form>
         </div>
 
@@ -103,6 +111,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+        <script src="../js/sign-in.js"></script>
+    
 </body>
 
 </html>
