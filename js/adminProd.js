@@ -158,3 +158,26 @@ const actProducto = () => {
 function cerrarsesion() {
     localStorage.removeItem("loggeduser")
 }
+
+const cargarInputs = () => {
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let juego = juegos.filter((game) => game.idJuego.toString() === inputId.value)
+    if(juego.length>0){
+        document.getElementById("nomJuego").value = juego[0].nombre
+        document.getElementById("descJuego").value = juego[0].descripcion
+        document.getElementById("imgJuego").value = juego[0].imagen
+        document.getElementById("genJuego").value = juego[0].genero
+        document.getElementById("precioActJuego").value = juego[0].precio
+        document.getElementById("destActJuego").value = juego[0].esDestacado
+    }else{
+        document.getElementById("nomJuego").value = ""
+        document.getElementById("descJuego").value = ""
+        document.getElementById("imgJuego").value = ""
+        document.getElementById("genJuego").value = ""
+        document.getElementById("precioActJuego").value = ""
+        document.getElementById("destActJuego").value = ""
+    }
+  }
+
+  let inputId = document.getElementById("idAct")
+  inputId.addEventListener("input", cargarInputs)
