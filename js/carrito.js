@@ -70,12 +70,17 @@ const changeinput = (event, precio, totaltotal) => {
 
 function quitar() {
     const boton = event.target; // Obtener el botón que se ha hecho clic
-    const idJuego = boton.id; // Obtener el idJuego del botón
+    const idJuegoo = boton.id; // Obtener el idJuego del botón
   
-     const fila = boton.parentNode.parentNode;
-     fila.remove();  
-
-    CarritoLS.splice(idJuego-1,1)
-    console.log(CarritoLS)
-    localStorage.setItem('carrito',JSON.stringify(CarritoLS))
+    const fila = boton.parentNode.parentNode;
+    fila.remove();
+  
+    const CarritoLS = JSON.parse(localStorage.getItem('carrito')); // Obtener el carrito del almacenamiento local
+  
+    const JuegoAEliminar = CarritoLS.filter((game) => game.idJuego.toString() !== idJuegoo.toString());
+  
+    console.log(JuegoAEliminar);
+    
+    localStorage.setItem('carrito', JSON.stringify(JuegoAEliminar));
   }
+  
