@@ -78,6 +78,7 @@ function quitar() {
     const CarritoActualizado = CarritoLS.filter((game) => game.idJuego.toString() !== idJuegoo.toString());
   
     console.log(CarritoActualizado);
+    sumatoriaNumeros()
     
     localStorage.setItem('carrito', JSON.stringify(CarritoActualizado));
   }
