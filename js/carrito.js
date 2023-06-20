@@ -18,7 +18,7 @@ tr.innerHTML =
     <td class="text-center">${prod.precio}</td>
     <td class="text-center" id='${totaltotal}' class="totale">0</td>
     <td><button type="button"
-      class="container close" id="${prod.idJuego}"
+      class="container button-style close" id="${prod.idJuego}"
       onclick="quitar()">X</button></td>
 </tr>
 `
