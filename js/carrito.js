@@ -77,10 +77,10 @@ function quitar() {
   
     const CarritoLS = JSON.parse(localStorage.getItem('carrito')); // Obtener el carrito del almacenamiento local
   
-    const JuegoAEliminar = CarritoLS.filter((game) => game.idJuego.toString() !== idJuegoo.toString());
+    const CarritoActualizado = CarritoLS.filter((game) => game.idJuego.toString() !== idJuegoo.toString());
   
-    console.log(JuegoAEliminar);
+    console.log(CarritoActualizado);
     
-    localStorage.setItem('carrito', JSON.stringify(JuegoAEliminar));
+    localStorage.setItem('carrito', JSON.stringify(CarritoActualizado));
   }
   
