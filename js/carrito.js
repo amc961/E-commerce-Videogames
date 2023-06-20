@@ -11,18 +11,21 @@ tr.innerHTML =
     
 `   
 <tr>
-    <td>${prod.nombre}</td>
+    <td class="text-center">${prod.nombre}</td>
     <td>
-    <input type='number' class='w-50 inputNumber' name='cantidad' id='${prod.idJuego}'>
+    <input type='number' class='w-100 inputNumber' name='cantidad' id='${prod.idJuego}'>
     </td>
-    <td>${prod.precio}</td>
-    <td id='${totaltotal}' class="totale" >0</td>
+    <td class="text-center">${prod.precio}</td>
+    <td class="text-center" id='${totaltotal}' class="totale">0</td>
+    <td><button type="button"
+      class="container close" id="${prod.idJuego}"
+      onclick="quitar()">X</button></td>
 </tr>
 `
 tBody.appendChild(tr)
 
 const input = document.getElementById(prod.idJuego)
-input.addEventListener('change', (ev) => changeinput(ev, prod.precio, totaltotal))
+input.addEventListener('input', (ev) => changeinput(ev, prod.precio, totaltotal))
 }
 )
 
@@ -62,3 +65,17 @@ const changeinput = (event, precio, totaltotal) => {
     resultado = sumatoria
     totalfinal.innerHTML = sumatoria
 }
+
+
+
+function quitar() {
+    const boton = event.target; // Obtener el botón que se ha hecho clic
+    const idJuego = boton.id; // Obtener el idJuego del botón
+  
+     const fila = boton.parentNode.parentNode;
+     fila.remove();  
+
+    CarritoLS.splice(idJuego-1,1)
+    console.log(CarritoLS)
+    localStorage.setItem('carrito',JSON.stringify(CarritoLS))
+  }
