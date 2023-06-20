@@ -75,8 +75,8 @@ const validarInputComun = (input, div) => {
     if(input.value.length === 0){
         div.innerHTML ="El campo no debe estar vacio"
         input.style.borderBlockColor = "red"
-    }else if(input.value.length<2 || input.value.length>100){
-        div.innerHTML = "El campo debe contener entre 2 y 100 caracteres"
+    }else if(input.value.length<2 || input.value.length>300){
+        div.innerHTML = "El campo debe contener entre 2 y 300 caracteres"
         input.style.borderBlockColor = "red"
     }else{
         div.innerHTML = ""

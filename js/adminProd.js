@@ -93,9 +93,11 @@ const delProducto = () => {
                 juegos[i].idJuego = i + 1
             }
             localStorage.setItem("juegos", JSON.stringify(juegos))
+            hayDestacado()
             cargarProductos()
         }
         document.getElementById("idDel").value = ""
+        
     } else {
         alert("Datos erroneos. Intentelo nuevamente")
     }
@@ -118,7 +120,7 @@ const actProducto = () => {
     let precioTexto = document.getElementById("precioProdTextoAct")
     let destacadoTexto = document.getElementById("destProdTextoAct")
     let validId = validarNumber(document.getElementById("idAct"), idTexto)
-    let validNombre = validarText(document.getElementById("nomJuego"), nombreTexto)
+    let validNombre = validarInputComun(document.getElementById("nomJuego"), nombreTexto)
     let validDesc = validarInputComun(document.getElementById("descJuego"), descripcionTexto)
     let validGenero = validarInputComun(document.getElementById("genJuego"), generoTexto)
     let validPrecio = validarNumber(document.getElementById("precioActJuego"), precioTexto)
@@ -136,6 +138,7 @@ const actProducto = () => {
                 juegos[i] = juego
                 flag = true
                 localStorage.setItem("juegos", JSON.stringify(juegos))
+                hayDestacado()
                 cargarProductos()
             }
         }
@@ -149,6 +152,7 @@ const actProducto = () => {
         document.getElementById("precioActJuego").value = ""
         document.getElementById("destActJuego").value = ""
         document.getElementById("idAct").value = ""
+       
     } else {
         alert("Datos erroneos. Intentelo nuevamente")
     }
@@ -181,3 +185,12 @@ const cargarInputs = () => {
 
   let inputId = document.getElementById("idAct")
   inputId.addEventListener("input", cargarInputs)
+
+  const hayDestacado = () =>{
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let destacado = juegos.filter((game) => game.esDestacado.toString() === "true")
+    if(destacado.length === 0){
+        juegos[0].esDestacado = true
+        localStorage.setItem("juegos", JSON.stringify(juegos))
+    }
+  }
