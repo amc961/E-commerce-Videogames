@@ -60,14 +60,15 @@
           <div class="mb-3 ">
             <label for="InputEmail" class="form-label d-flex justify-content-center">Correo electrónico</label>
             <input type="email" class="form-control d-flex justify-content-center" id="InputEmail"
-              aria-describedby="emailHelp" maxlength="30" required>
-            <div id="emailHelp" class="form-text d-flex justify-content-center">Nunca compartiremos su correo
+              aria-describedby="emailHelp" maxlength="30">
+            <div id="emailText" class="form-text d-flex justify-content-center">Nunca compartiremos su correo
               electrónico con nadie más.</div>
           </div>
           <div class="mb-3">
             <label for="InputPassword" class="form-label d-flex justify-content-center">Contraseña</label>
-            <input type="password" class="form-control d-flex justify-content-center" id="InputPassword" maxlength="20"
-              minlength="8" required>
+            <input type="password" class="form-control d-flex justify-content-center " id="InputPassword" maxlength="20"
+              minlength="8">
+            <div id="passText" class="form-text d-flex justify-content-center"></div>
           </div>
           <div class="d-grid gap-2">
             <button type="button" class="my-2 button-style" onclick="validarInfo()">Enviar</button>
@@ -104,6 +105,7 @@
       <p>Derechos &copy;2023; Diseñado por <span class="diseño">Game Paradise</span></p>
     </div>
   </footer>
+  <script src="../js/formValidations.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>

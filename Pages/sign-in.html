@@ -54,20 +54,24 @@
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nameInput" aria-describedby="emailHelp">
+                    <div id="nameText" class="form-text d-flex justify-content-center"></div>
                 </div>
                 <div class="mb-3">
                     <label for="lastNameInput" class="form-label">Apellido</label>
                     <input type="text" class="form-control" id="lastNameInput" aria-describedby="emailHelp">
+                    <div id="lastNameText" class="form-text d-flex justify-content-center"></div>
                 </div>
                 <div class="mb-3">
                     <label for="emailInput" class="form-label">Email</label>
                     <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp">
+                    <div id="emailText" class="form-text d-flex justify-content-center"></div>
                 </div>
                 <div class="mb-3">
                     <label for="passInput" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="passInput" size="30">
+                    <div id="passText" class="form-text d-flex justify-content-center"></div>
                 </div>
-                <button type="button" class="button-style">Enviar</button>
+                <button type="button" class="button-style" onclick="validarRegistro()">Enviar</button>
             </form>
         </div>
 
@@ -96,6 +100,8 @@
             <p>Derechos &copy;2023; Diseñado por <span class="diseño">Game Paradise</span></p>
         </div>
     </footer>
+    <script src="../js/formValidations.js"></script>
+    <script src="../js/validaciones.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

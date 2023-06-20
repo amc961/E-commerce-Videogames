@@ -1,3 +1,25 @@
+const cargarInputs = () => {
+    let users = JSON.parse(localStorage.getItem("users"))
+    let usuarios = users.filter((usuario) => usuario.id.toString() === inputId.value)
+    if (usuarios.length>0){
+        document.getElementById("nomUs").value = usuarios[0].nombre
+        document.getElementById("apeUs").value = usuarios[0].apellido
+        document.getElementById("emUs").value = usuarios[0].email
+        document.getElementById("contUs").value = usuarios[0].pass
+        document.getElementById("adUs").value = usuarios[0].esAdmin
+    }
+    else{
+        document.getElementById("nomUs").value = ""
+        document.getElementById("apeUs").value = ""
+        document.getElementById("emUs").value = ""
+        document.getElementById("contUs").value =""
+        document.getElementById("adUs").value = ""
+    
+    }
+
+}
+
+
 const cargarUsuarios = () => {
     let myDiv = document.getElementById("container-articles")
     let users = JSON.parse(localStorage.getItem("users"))
@@ -34,31 +56,54 @@ const cargarUser = () => {
     let passUser = document.getElementById("passUser").value
     let users = JSON.parse(localStorage.getItem("users"))
     let esAdminUser = document.getElementById("adminUser").value
-    let idUser = users.length +1 
-    users.push({id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: esAdminUser})
-    localStorage.setItem("users", JSON.stringify(users))
-    cargarUsuarios()
-}
-
-const delUser = () =>{
-    let idUser = document.getElementById("idUser").value
-    let users = JSON.parse(localStorage.getItem("users"))
-    let pos = -1
-    for (let i = 0; i < users.length; i++) {
-        if (idUser == users[i].id) {
-            pos = i
-        }
-    }
-    if(pos == -1){
-        alert("Id inexistente")
-    }else{
-        users.splice(pos, 1)
-        for (let i = 0; i < users.length; i++) {
-            users[i].id = i + 1
-        }
+    let nomText = document.getElementById("nombreTexto")
+    let apeText = document.getElementById("apellidoTexto")
+    let emailText = document.getElementById("emailTexto")
+    let passText = document.getElementById("contraTexto")
+    let adminText = document.getElementById("esAdminTexto")
+    let validNom = validarText(document.getElementById("nombreUser"), nomText)
+    let validApe = validarText(document.getElementById("apellidoUser"), apeText)
+    let validEmail = validarEmail(document.getElementById("emailUser"), emailText)
+    let validPass = validarPass(document.getElementById("passUser"), passText)
+    let validAdmin = validarAdmin(document.getElementById("adminUser"), adminText)
+    let idUser = users.length + 1
+    if(validNom && validarApe && validEmail && validPass && validAdmin){
+        users.push({ id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: esAdminUser })
         localStorage.setItem("users", JSON.stringify(users))
         cargarUsuarios()
+    }else{
+        alert("Datos erroneos. Intentelo nuevamente")
     }
+
+}
+
+const delUser = () => {
+    let idUser = document.getElementById("idUser").value
+    let idTexto = document.getElementById("idTexto")
+    let users = JSON.parse(localStorage.getItem("users"))
+    let validId = validarNumber(document.getElementById("idUser"), idTexto)
+    if (validId) {
+        let pos = -1
+        for (let i = 0; i < users.length; i++) {
+            if (idUser == users[i].id) {
+                pos = i
+            }
+        }
+        if (pos == -1) {
+            alert("Id inexistente")
+        } else {
+            users.splice(pos, 1)
+            for (let i = 0; i < users.length; i++) {
+                users[i].id = i + 1
+            }
+            localStorage.setItem("users", JSON.stringify(users))
+            cargarUsuarios()
+        }
+    }
+    else{
+        alert("Datos erroneos. No se elimino usuario")
+    }
+
 }
 
 const actUser = () => {
@@ -70,20 +115,41 @@ const actUser = () => {
     let users = JSON.parse(localStorage.getItem("users"))
     let idUser = parseInt(document.getElementById("idAct").value)
     let flag = false
-    let user = {id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: admin}
-    for(let i = 0; i <users.length; i++){
-        if(users[i].id == idUser){
-            users[i] = user
-            flag = true
-            localStorage.setItem("users", JSON.stringify(users))
-            cargarUsuarios()
+    let idText = document.getElementById("idText")
+    let nomText = document.getElementById("nameText")
+    let apeText = document.getElementById("apeText")
+    let emailText = document.getElementById("emailText")
+    let passText = document.getElementById("passText")
+    let adminText = document.getElementById("adminText")
+    let validId = validarNumber(document.getElementById("idAct"), idText)
+    let validNom = validarText(document.getElementById("nomUs"), nomText)
+    let validApe = validarText(document.getElementById("apeUs"), apeText)
+    let validEmail = validarEmail(document.getElementById("emUs"), emailText)
+    let validPass = validarPass(document.getElementById("contUs"), passText)
+    let validAdmin = validarAdmin(document.getElementById("adUs"), adminText)
+    if (validId && validNom && validApe && validEmail && validPass && validAdmin) {
+        let user = { id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: admin }
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].id == idUser) {
+                users[i] = user
+                flag = true
+                localStorage.setItem("users", JSON.stringify(users))
+                cargarUsuarios()
+            }
         }
-    }  
-    if(!flag){
-        alert("No se encontro el usuario que desea modificar")
+        if (!flag) {
+            alert("No se encontro el usuario que desea modificar")
+        }
     }
+    else {
+        alert("Datos erroneos. No se actualizo el usuario")
+    }
+
 }
 
-function cerrarsesion(){
+function cerrarsesion() {
     localStorage.removeItem("loggeduser")
-  }
+}
+
+let inputId = document.getElementById("idAct")
+inputId.addEventListener("input", cargarInputs)

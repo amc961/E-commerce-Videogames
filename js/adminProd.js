@@ -39,45 +39,69 @@ const addProducto = () => {
     let precioJuego = document.getElementById("precioJuego").value
     let dest = document.getElementById("destJuego").value
     let juegos = JSON.parse(localStorage.getItem("juegos"))
-    let id = juegos.length + 1
-    let juego = { idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego, esDestacado: dest, precio: precioJuego }
-    if (juego.esDestacado === "true") {
-        juegos.forEach((juegoGuardado) => {
-            juegoGuardado.esDestacado = false
-        })
+    let nombreTexto = document.getElementById("nomProdTexto")
+    let descripcionTexto = document.getElementById("descProdTexto")
+    let generoTexto = document.getElementById("generoProdTexto")
+    let precioTexto = document.getElementById("precioProdTexto")
+    let destacadoTexto = document.getElementById("destProdTexto")
+    let validNombre = validarInputComun(document.getElementById("nombreJuego"), nombreTexto)
+    let validDesc = validarInputComun(document.getElementById("descripcionJuego"), descripcionTexto)
+    let validGenero = validarInputComun(document.getElementById("generoJuego"), generoTexto)
+    let validPrecio = validarNumber(document.getElementById("precioJuego"), precioTexto)
+    let validarDestacado = validarAdmin(document.getElementById("destJuego"), destacadoTexto)
+    if (validNombre && validDesc && validGenero && validPrecio && validarDestacado) {
+        let id = juegos.length + 1
+        let juego = { idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego, esDestacado: dest, precio: precioJuego }
+        if (juego.esDestacado === "true") {
+            juegos.forEach((juegoGuardado) => {
+                juegoGuardado.esDestacado = false
+            })
+        }
+        juegos.push(juego)
+        localStorage.setItem("juegos", JSON.stringify(juegos))
+        cargarProductos()
+        document.getElementById("nombreJuego").value = ""
+        document.getElementById("descripcionJuego").value = ""
+        document.getElementById("imagenJuego").value = ""
+        document.getElementById("generoJuego").value = ""
+        document.getElementById("precioJuego").value = ""
+        document.getElementById("destJuego").value = ""
+
+    }else{
+        alert("Datos erroneos")
     }
-    juegos.push(juego)
-    localStorage.setItem("juegos", JSON.stringify(juegos))
-    cargarProductos()
-    document.getElementById("nombreJuego").value = ""
-    document.getElementById("descripcionJuego").value = ""
-    document.getElementById("imagenJuego").value = ""
-    document.getElementById("generoJuego").value = ""
-    document.getElementById("precioJuego").value = ""
-    document.getElementById("destJuego").value = ""
 
 }
 
 const delProducto = () => {
     let id = document.getElementById("idDel").value
-    let juegos = JSON.parse(localStorage.getItem("juegos"))
-    let pos = -1
-    for (let i = 0; i < juegos.length; i++) {
-        if (id == juegos[i].idJuego) {
-            pos = i
-        }
-    }
-    if (pos == -1) {
-        alert("Id inexistente")
-    } else {
-        juegos.splice(pos, 1)
+    let idTexto = document.getElementById("idProdTexto")
+    let validId = validarNumber(document.getElementById("idDel"), idTexto)
+    if (validId) {
+        let juegos = JSON.parse(localStorage.getItem("juegos"))
+        let pos = -1
         for (let i = 0; i < juegos.length; i++) {
-            juegos[i].idJuego = i + 1
+            if (id == juegos[i].idJuego) {
+                pos = i
+            }
         }
-        localStorage.setItem("juegos", JSON.stringify(juegos))
-        cargarProductos()
+        if (pos == -1) {
+            alert("Id inexistente")
+        } else {
+            juegos.splice(pos, 1)
+            for (let i = 0; i < juegos.length; i++) {
+                juegos[i].idJuego = i + 1
+            }
+            localStorage.setItem("juegos", JSON.stringify(juegos))
+            hayDestacado()
+            cargarProductos()
+        }
+        document.getElementById("idDel").value = ""
+        
+    } else {
+        alert("Datos erroneos. Intentelo nuevamente")
     }
-    document.getElementById("idDel").value = ""
+
 }
 
 const actProducto = () => {
@@ -89,33 +113,84 @@ const actProducto = () => {
     let dest = document.getElementById("destActJuego").value
     let juegos = JSON.parse(localStorage.getItem("juegos"))
     let id = parseInt(document.getElementById("idAct").value)
-    let flag = false
-    let juego = { idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego, esDestacado: dest, precio: precioJuego }
-    for (let i = 0; i < juegos.length; i++) {
-        if (juegos[i].idJuego == id) {
-            if (juego.esDestacado === "true") {
-                juegos.forEach((juegoGuardado) => {
-                    juegoGuardado.esDestacado = false
-                })
+    let idTexto = document.getElementById("idProdTextoAct")
+    let nombreTexto = document.getElementById("nombreProdTextoAct")
+    let descripcionTexto = document.getElementById("descProdTextoAct")
+    let generoTexto = document.getElementById("generoProdTextoAct")
+    let precioTexto = document.getElementById("precioProdTextoAct")
+    let destacadoTexto = document.getElementById("destProdTextoAct")
+    let validId = validarNumber(document.getElementById("idAct"), idTexto)
+    let validNombre = validarInputComun(document.getElementById("nomJuego"), nombreTexto)
+    let validDesc = validarInputComun(document.getElementById("descJuego"), descripcionTexto)
+    let validGenero = validarInputComun(document.getElementById("genJuego"), generoTexto)
+    let validPrecio = validarNumber(document.getElementById("precioActJuego"), precioTexto)
+    let validarDestacado = validarAdmin(document.getElementById("destActJuego"), destacadoTexto)
+    if (validId && validNombre && validDesc && validGenero && validPrecio && validarDestacado) {
+        let flag = false
+        let juego = { idJuego: id, nombre: nombreJuego, descripcion: descripcionJuego, imagen: imagenJuego, genero: generoJuego, esDestacado: dest, precio: precioJuego }
+        for (let i = 0; i < juegos.length; i++) {
+            if (juegos[i].idJuego == id) {
+                if (juego.esDestacado === "true") {
+                    juegos.forEach((juegoGuardado) => {
+                        juegoGuardado.esDestacado = false
+                    })
+                }
+                juegos[i] = juego
+                flag = true
+                localStorage.setItem("juegos", JSON.stringify(juegos))
+                hayDestacado()
+                cargarProductos()
             }
-            juegos[i] = juego
-            flag = true
-            localStorage.setItem("juegos", JSON.stringify(juegos))
-            cargarProductos()
         }
+        if (!flag) {
+            alert("No se encontro el juego que desea modificar")
+        }
+        document.getElementById("nomJuego").value = ""
+        document.getElementById("descJuego").value = ""
+        document.getElementById("imgJuego").value = ""
+        document.getElementById("genJuego").value = ""
+        document.getElementById("precioActJuego").value = ""
+        document.getElementById("destActJuego").value = ""
+        document.getElementById("idAct").value = ""
+       
+    } else {
+        alert("Datos erroneos. Intentelo nuevamente")
     }
-    if (!flag) {
-        alert("No se encontro el juego que desea modificar")
-    }
-    document.getElementById("nomJuego").value = ""
-    document.getElementById("descJuego").value = ""
-    document.getElementById("imgJuego").value = ""
-    document.getElementById("genJuego").value = ""
-    document.getElementById("precioActJuego").value = ""
-    document.getElementById("destActJuego").value = ""
-    document.getElementById("idAct").value = ""
+
 }
 
-function cerrarsesion(){
+function cerrarsesion() {
     localStorage.removeItem("loggeduser")
+}
+
+const cargarInputs = () => {
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let juego = juegos.filter((game) => game.idJuego.toString() === inputId.value)
+    if(juego.length>0){
+        document.getElementById("nomJuego").value = juego[0].nombre
+        document.getElementById("descJuego").value = juego[0].descripcion
+        document.getElementById("imgJuego").value = juego[0].imagen
+        document.getElementById("genJuego").value = juego[0].genero
+        document.getElementById("precioActJuego").value = juego[0].precio
+        document.getElementById("destActJuego").value = juego[0].esDestacado
+    }else{
+        document.getElementById("nomJuego").value = ""
+        document.getElementById("descJuego").value = ""
+        document.getElementById("imgJuego").value = ""
+        document.getElementById("genJuego").value = ""
+        document.getElementById("precioActJuego").value = ""
+        document.getElementById("destActJuego").value = ""
+    }
+  }
+
+  let inputId = document.getElementById("idAct")
+  inputId.addEventListener("input", cargarInputs)
+
+  const hayDestacado = () =>{
+    let juegos = JSON.parse(localStorage.getItem("juegos"))
+    let destacado = juegos.filter((game) => game.esDestacado.toString() === "true")
+    if(destacado.length === 0){
+        juegos[0].esDestacado = true
+        localStorage.setItem("juegos", JSON.stringify(juegos))
+    }
   }
