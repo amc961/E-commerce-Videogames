@@ -1,3 +1,25 @@
+const cargarInputs = () => {
+    let users = JSON.parse(localStorage.getItem("users"))
+    let usuarios = users.filter((usuario) => usuario.id.toString() === inputId.value)
+    if (usuarios.length>0){
+        document.getElementById("nomUs").value = usuarios[0].nombre
+        document.getElementById("apeUs").value = usuarios[0].apellido
+        document.getElementById("emUs").value = usuarios[0].email
+        document.getElementById("contUs").value = usuarios[0].pass
+        document.getElementById("adUs").value = usuarios[0].esAdmin
+    }
+    else{
+        document.getElementById("nomUs").value = ""
+        document.getElementById("apeUs").value = ""
+        document.getElementById("emUs").value = ""
+        document.getElementById("contUs").value =""
+        document.getElementById("adUs").value = ""
+    
+    }
+
+}
+
+
 const cargarUsuarios = () => {
     let myDiv = document.getElementById("container-articles")
     let users = JSON.parse(localStorage.getItem("users"))
@@ -45,7 +67,7 @@ const cargarUser = () => {
     let validPass = validarPass(document.getElementById("passUser"), passText)
     let validAdmin = validarAdmin(document.getElementById("adminUser"), adminText)
     let idUser = users.length + 1
-    if(validNom && validarApe && validEmail && validPass && validAdmin){
+    if(validNom && validApe && validEmail && validPass && validAdmin){
         users.push({ id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: esAdminUser })
         localStorage.setItem("users", JSON.stringify(users))
         cargarUsuarios()
@@ -128,3 +150,6 @@ const actUser = () => {
 function cerrarsesion() {
     localStorage.removeItem("loggeduser")
 }
+
+let inputId = document.getElementById("idAct")
+inputId.addEventListener("input", cargarInputs)

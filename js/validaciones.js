@@ -31,7 +31,7 @@ const validarRegistro = () =>{
 
 const validarBusqueda = () => {
     let buscadorTexto = document.getElementById("searchText")
-    let validSearch = validarInputComun(busqueda, buscadorTexto)
+    let validSearch = validarBuscador(busqueda, buscadorTexto)
 }
 
 let busqueda = document.getElementById("idInputSearch")
