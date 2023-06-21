@@ -39,14 +39,8 @@
                         <a class="nav-link" href="nosotrosUser.html">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          style="color: black"
-                          data-toggle="modal"
-                          data-target="#exampleModal"
-                          onclick="traerMeGusta()"
-                        >   Favoritos
+                        <button type="button" class="btn btn-primary" style="color: black" data-toggle="modal"
+                            data-target="#exampleModal" onclick="traerMeGusta()"> Favoritos
                         </button> <!--boton llama o trae al meGusta  -->
                     </li>
                     <li class="nav-item">
@@ -92,11 +86,8 @@
                         <div class="card-header">Scrum Master</div>
                         <div class="card-body">
                             <h5 class="card-title">Damián Lobos</h5>
-                            <p class="card-text">Hizo el rol de Scrum Master
-                                en este proyecto. Se encargo de
-                                desarrollar la página principal de usuario
-                                logueado, registro y página de
-                                administración y backend</p>
+                            <p class="card-text">Tengo 28 años de edad, conocimientos en distintos lenguajes de
+                                programacion tales como java, c#, c++, entre otros. Ocupe el rol de scrum master</p>
                         </div>
                     </div>
                 </div>
@@ -106,23 +97,12 @@
                         <div class="card-header">Teach Leader</div>
                         <div class="card-body">
                             <h5 class="card-title">Gonzalo Mainardi</h5>
-                            <p class="card-text">Desarrollo Login, página de
-                                usuario, carrito y rutas protegidas.</p>
+                            <p class="card-text">Tengo 27 años. No poseo conocimientos previos de programacion de ningun
+                                tipo, pero tengo muchas ganas de adentrarme en este mundo</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-start my-4 align-items-center ">
-                    <img src="../Images/samuel.jpeg" class="rounded-circle mx-3" alt="..." width="155" height="170">
-                    <div class="card text-white bg-primary  ">
-                        <div class="card-header">Developer</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Samuel Lapetina</h5>
-                            <p class="card-text">Desarrollo de formulario
-                                protegido, localstorage, página de detalle</p>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="d-flex justify-content-start my-4 align-items-center">
                     <img src="../Images/WhatsApp Image 2023-06-06 at 22.06.59.jpeg" class="rounded-circle mx-3"
@@ -131,8 +111,8 @@
                         <div class="card-header">Developer</div>
                         <div class="card-body">
                             <h5 class="card-title">María José Toledo</h5>
-                            <p class="card-text">Desarrollo Web principal,
-                                Sobre nosotros y Error 404</p>
+                            <p class="card-text">Tengo 42 años. Poseo conocimientos de html y css. Recien ingresando en
+                                el mundo de la programacion</p>
                         </div>
                     </div>
                 </div>
@@ -162,60 +142,45 @@
             <p>Derechos &copy;2023; Diseñado por <span class="diseño">Game Paradise</span></p>
         </div>
     </footer>
-                  <!--Modal -->
-                  <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">
-                          Favoritos
-                        </h5>
-  
-                        <!-- ??? ver revisar porque no hace nada  -->
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                       <!-- start lista/tabla favoritos-->
-                      <div class="modal-body">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <th scope="col">Nª</th>
-                              <th scope="col">Juego</th>
-                              <th scope="col">Accion</th>
-                            </tr>
-                          </thead>
-                         
-                          <tbody id="tBody"></tbody>
-                        </table>
-                      </div>
-  
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="button-style"
-                          data-dismiss="modal"
-                        >
-                          Cerrar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+    <!--Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Favoritos
+                    </h5>
+
+                    <!-- ??? ver revisar porque no hace nada  -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <!--fin modal-->
+                <!-- start lista/tabla favoritos-->
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nª</th>
+                                <th scope="col">Juego</th>
+                                <th scope="col">Accion</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="button-style" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fin modal-->
 
     <script src="../js/favoritos.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
