@@ -84,4 +84,3 @@ function quitar() {
     
     localStorage.setItem('carrito', JSON.stringify(CarritoActualizado));
   }
-  
