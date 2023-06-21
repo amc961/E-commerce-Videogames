@@ -71,6 +71,16 @@ const cargarUser = () => {
         users.push({ id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: esAdminUser })
         localStorage.setItem("users", JSON.stringify(users))
         cargarUsuarios()
+        document.getElementById("nombreUser").value = ""
+        document.getElementById("apellidoUser").value =""
+        document.getElementById("emailUser").value=""
+        document.getElementById("passUser").value=""
+        document.getElementById("adminUser").value=""
+        document.getElementById("nombreUser").style.borderBlockColor = ""
+        document.getElementById("apellidoUser").style.borderBlockColor=""
+        document.getElementById("emailUser").style.borderBlockColor=""
+        document.getElementById("passUser").style.borderBlockColor=""
+        document.getElementById("adminUser").style.borderBlockColor=""
     }else{
         alert("Datos erroneos. Intentelo nuevamente")
     }
@@ -98,6 +108,8 @@ const delUser = () => {
             }
             localStorage.setItem("users", JSON.stringify(users))
             cargarUsuarios()
+            document.getElementById("idUser").value = ""
+            document.getElementById("idUser").style.borderBlockColor = ""
         }
     }
     else{
@@ -135,6 +147,18 @@ const actUser = () => {
                 flag = true
                 localStorage.setItem("users", JSON.stringify(users))
                 cargarUsuarios()
+                document.getElementById("nomUs").value=""
+                document.getElementById("apeUs").value=""
+                document.getElementById("emUs").value=""
+                document.getElementById("contUs").value=""
+                document.getElementById("adUs").value=""
+                document.getElementById("idAct").value=""
+                document.getElementById("nomUs").style.borderBlockColor=""
+                document.getElementById("apeUs").style.borderBlockColor=""
+                document.getElementById("emUs").style.borderBlockColor=""
+                document.getElementById("contUs").style.borderBlockColor=""
+                document.getElementById("adUs").style.borderBlockColor=""
+                document.getElementById("idAct").style.borderBlockColor=""
             }
         }
         if (!flag) {

@@ -25,6 +25,10 @@ const validarRegistro = () =>{
             apellido.value = ""
             email.value = ""
             passw.value =""
+            nombre.style.borderBlockColor = ""
+            apellido.style.borderBlockColor =""
+            email.style.borderBlockColor =""
+            passw.style.borderBlockColor =""
         }
     }
 }

@@ -66,6 +66,12 @@ const addProducto = () => {
         document.getElementById("generoJuego").value = ""
         document.getElementById("precioJuego").value = ""
         document.getElementById("destJuego").value = ""
+        document.getElementById("nombreJuego").style.borderBlockColor = ""
+        document.getElementById("descripcionJuego").style.borderBlockColor = ""
+        document.getElementById("imagenJuego").style.borderBlockColor= ""
+        document.getElementById("generoJuego").style.borderBlockColor = ""
+        document.getElementById("precioJuego").style.borderBlockColor = ""
+        document.getElementById("destJuego").style.borderBlockColor = ""
 
     }else{
         alert("Datos erroneos")
@@ -97,6 +103,7 @@ const delProducto = () => {
             cargarProductos()
         }
         document.getElementById("idDel").value = ""
+        document.getElementById("idDel").style.borderBlockColor= ""
         
     } else {
         alert("Datos erroneos. Intentelo nuevamente")
@@ -152,6 +159,13 @@ const actProducto = () => {
         document.getElementById("precioActJuego").value = ""
         document.getElementById("destActJuego").value = ""
         document.getElementById("idAct").value = ""
+        document.getElementById("nomJuego").style.borderBlockColor = ""
+        document.getElementById("descJuego").style.borderBlockColor = ""
+        document.getElementById("imgJuego").style.borderBlockColor = ""
+        document.getElementById("genJuego").style.borderBlockColor = ""
+        document.getElementById("precioActJuego").style.borderBlockColor = ""
+        document.getElementById("destActJuego").style.borderBlockColor = ""
+        document.getElementById("idAct").style.borderBlockColor = ""
        
     } else {
         alert("Datos erroneos. Intentelo nuevamente")
