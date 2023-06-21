@@ -2,7 +2,7 @@ let userss = JSON.parse(localStorage.getItem('loggeduser')); // Obtener los usua
 
 function verificacionuser(){
   if(userss[0]){
-    if (userss[0].esAdmin) {
+    if (userss[0].esAdmin.toString() === "true") {
       location.href = "../Pages/admin.html"; // Redirigir al usuario administrador
           }
         } else {

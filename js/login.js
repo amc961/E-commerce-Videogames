@@ -14,7 +14,7 @@ function validarInfo() {
         encontrado = true
         usuariologged.push(usuario)
         localStorage.setItem('loggeduser', JSON.stringify(usuariologged))
-        if (usuario.esAdmin) {
+        if (usuario.esAdmin.toString() === "true") {
           location.href = `../Pages/admin.html`
         }
         else {
