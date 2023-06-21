@@ -67,7 +67,7 @@ const cargarUser = () => {
     let validPass = validarPass(document.getElementById("passUser"), passText)
     let validAdmin = validarAdmin(document.getElementById("adminUser"), adminText)
     let idUser = users.length + 1
-    if(validNom && validarApe && validEmail && validPass && validAdmin){
+    if(validNom && validApe && validEmail && validPass && validAdmin){
         users.push({ id: idUser, nombre: nombreUser, apellido: apellidoUser, email: emailUser, pass: passUser, esAdmin: esAdminUser })
         localStorage.setItem("users", JSON.stringify(users))
         cargarUsuarios()
