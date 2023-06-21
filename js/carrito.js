@@ -65,3 +65,19 @@ const changeinput = (event, precio, totaltotal) => {
     resultado = sumatoria
     totalfinal.innerHTML = sumatoria
 }
+function quitar() {
+    const boton = event.target; // Obtener el botón que se ha hecho clic
+    const idJuegoo = boton.id; // Obtener el idJuego del botón
+  
+    const fila = boton.parentNode.parentNode;
+    fila.remove();
+  
+    const CarritoLS = JSON.parse(localStorage.getItem('carrito')); // Obtener el carrito del almacenamiento local
+  
+    const CarritoActualizado = CarritoLS.filter((game) => game.idJuego.toString() !== idJuegoo.toString());
+  
+    console.log(CarritoActualizado);
+    sumatoriaNumeros()
+    
+    localStorage.setItem('carrito', JSON.stringify(CarritoActualizado));
+  }
