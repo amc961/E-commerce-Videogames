@@ -15,10 +15,10 @@ tr.innerHTML =
     <td>
     <input type='number' class='w-100 inputNumber' name='cantidad' id='${prod.idJuego}'>
     </td>
-    <td class="text-center">${prod.precio}</td>
-    <td class="text-center" id='${totaltotal}' class="totale">0</td>
+    <td>${prod.precio}</td>
+    <td id='${totaltotal}' class="totale">0</td>
     <td><button type="button"
-      class="container close" id="${prod.idJuego}"
+      class="container button-style close" id="${prod.idJuego}"
       onclick="quitar()">X</button></td>
 </tr>
 `
@@ -80,6 +80,7 @@ function quitar() {
     const CarritoActualizado = CarritoLS.filter((game) => game.idJuego.toString() !== idJuegoo.toString());
   
     console.log(CarritoActualizado);
+    sumatoriaNumeros()
     
     localStorage.setItem('carrito', JSON.stringify(CarritoActualizado));
   }
