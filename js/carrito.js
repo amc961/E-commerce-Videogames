@@ -11,9 +11,9 @@ tr.innerHTML =
     
 `   
 <tr>
-    <td>${prod.nombre}</td>
+    <td class="text-center">${prod.nombre}</td>
     <td>
-    <input type='number' class='w-50 inputNumber' name='cantidad' id='${prod.idJuego}'>
+    <input type='number' class='w-100 inputNumber' name='cantidad' id='${prod.idJuego}'>
     </td>
     <td>${prod.precio}</td>
     <td id='${totaltotal}' class="totale">0</td>
@@ -25,7 +25,7 @@ tr.innerHTML =
 tBody.appendChild(tr)
 
 const input = document.getElementById(prod.idJuego)
-input.addEventListener('change', (ev) => changeinput(ev, prod.precio, totaltotal))
+input.addEventListener('input', (ev) => changeinput(ev, prod.precio, totaltotal))
 }
 )
 
@@ -66,6 +66,8 @@ const changeinput = (event, precio, totaltotal) => {
     totalfinal.innerHTML = sumatoria
 }
 
+
+
 function quitar() {
     const boton = event.target; // Obtener el botón que se ha hecho clic
     const idJuegoo = boton.id; // Obtener el idJuego del botón
@@ -82,4 +84,3 @@ function quitar() {
     
     localStorage.setItem('carrito', JSON.stringify(CarritoActualizado));
   }
-  

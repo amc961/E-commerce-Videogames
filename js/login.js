@@ -28,6 +28,8 @@ function validarInfo() {
       alert("Usuario o contraseña invalidas")
       userName.value = ""
       pass.value = ""
+      userName.style.borderBlockColor =""
+      pass.style.borderBlockColor =""
     }
   }
 
